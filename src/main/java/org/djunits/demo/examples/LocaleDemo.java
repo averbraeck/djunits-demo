@@ -5,6 +5,7 @@ import java.util.Locale;
 import org.djunits.unit.DurationUnit;
 import org.djunits.unit.util.UNITS;
 import org.djunits.value.vdouble.scalar.Duration;
+import org.djunits.value.vdouble.scalar.Speed;
 
 /**
  * This Java code demonstrates conversions between related unit using DJUNITS.
@@ -31,12 +32,29 @@ public final class LocaleDemo implements UNITS
      */
     public static void main(final String[] args)
     {
-        Locale.setDefault(Locale.forLanguageTag("NL"));
+        System.out.println("\nPrinting US");
+        Locale.setDefault(Locale.US);
         Duration hour = new Duration(3.0, DurationUnit.HOUR);
         System.out.println(hour.toTextualString());
         System.out.println(hour);
-        Locale.setDefault(Locale.US);
+
+    	System.out.println("\nPrinting NL");
+        Locale.setDefault(Locale.forLanguageTag("NL"));
         System.out.println(hour.toTextualString());
         System.out.println(hour);
+
+        System.out.println("\nParsing UK");
+    	Locale.setDefault(new Locale("en", "UK"));
+    	Speed speed = Speed.valueOf("14.2 km/h");
+        System.out.println(speed.toTextualString());
+        System.out.println(speed.toDisplayString());
+        System.out.println(speed);
+    	
+        System.out.println("\nParsing NL");
+    	Locale.setDefault(new Locale("nl", "NL"));
+    	speed = Speed.valueOf("14.2 km/u");
+        System.out.println(speed.toTextualString());
+        System.out.println(speed.toDisplayString());
+        System.out.println(speed);
     }
 }
