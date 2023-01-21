@@ -56,5 +56,15 @@ public final class LocaleDemo implements UNITS
         System.out.println(speed.toTextualString());
         System.out.println(speed.toDisplayString());
         System.out.println(speed);
+        
+        try
+        {
+        	speed = Speed.valueOf("14.2 km/z");
+        	System.err.println("WRONG, should not be able to parse 14.2 km/z");
+        }
+        catch (Exception e)
+        {
+        	System.out.println("Correctly failed to parse 14.2 km/z");
+        }
     }
 }
