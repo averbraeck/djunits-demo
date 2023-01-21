@@ -2,7 +2,6 @@ package org.djunits.demo.examples;
 
 import java.util.Locale;
 
-import org.djunits.locale.DefaultLocale;
 import org.djunits.unit.DurationUnit;
 import org.djunits.unit.util.UNITS;
 import org.djunits.value.vdouble.scalar.Duration;
@@ -32,11 +31,11 @@ public final class LocaleDemo implements UNITS
      */
     public static void main(final String[] args)
     {
-        DefaultLocale.setLocale(Locale.forLanguageTag("NL"));
+        Locale.setDefault(Locale.forLanguageTag("NL"));
         Duration hour = new Duration(3.0, DurationUnit.HOUR);
         System.out.println(hour.toTextualString());
         System.out.println(hour);
-        DefaultLocale.setLocale(Locale.US);
+        Locale.setDefault(Locale.US);
         System.out.println(hour.toTextualString());
         System.out.println(hour);
     }
