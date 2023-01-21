@@ -52,7 +52,7 @@ public final class UnitPrefix
             Unit<?> unit = unitMap.get(ab);
             System.out.println((ab + "        ").substring(0, 8) + (unit.getId() + "        ").substring(0, 8) + "  "
                     + (unit.getName() + "                        ").substring(0, 24) + "   "
-                    + unit.getScale().toStandardUnit(1.0) + "   " + unit.getAbbreviations());
+                    + unit.getScale().toStandardUnit(1.0) + "   " + unit.getDefaultAbbreviations());
         }
     }
 }
