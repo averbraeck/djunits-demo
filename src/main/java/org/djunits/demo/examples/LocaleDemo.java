@@ -66,7 +66,7 @@ public final class LocaleDemo implements UNITS
 
         System.out.println("\nParsing NL");
     	Locale.setDefault(new Locale("nl", "NL"));
-    	speed = Speed.valueOf("14.2 km/u");
+    	speed = Speed.valueOf("14,2 km/u");
         System.out.println(speed.toTextualString());
         System.out.println(speed.toDisplayString());
         System.out.println(speed);
@@ -74,11 +74,31 @@ public final class LocaleDemo implements UNITS
         try
         {
         	speed = Speed.valueOf("14.2 km/z");
-        	System.err.println("WRONG, should not be able to parse 14.2 km/z");
+        	System.err.println("WRONG, should not be able to parse 14.2 km/z in NL locale");
         }
         catch (Exception e)
         {
-        	System.out.println("Correctly failed to parse 14.2 km/z");
+        	System.out.println("Correctly failed to parse 14.2 km/z in NL locale");
+        }
+        
+        try
+        {
+        	speed = Speed.valueOf("14,2 km/z");
+        	System.err.println("WRONG, should not be able to parse 14,2 km/z in NL locale");
+        }
+        catch (Exception e)
+        {
+        	System.out.println("Correctly failed to parse 14,2 km/z in NL locale");
+        }
+        
+        try
+        {
+        	speed = Speed.valueOf("18,99 km/h");
+        	System.out.println("Correctly parsed 18.99 km/h using fallback locale as " + speed.toDisplayString());
+        }
+        catch (Exception e)
+        {
+        	System.err.println("WRONG, should not be fail on parsing 18.99 km/h in NL locale -- fallback should be ok");
         }
         
     	System.out.println("\nPrinting NL");
@@ -99,8 +119,8 @@ public final class LocaleDemo implements UNITS
         
     	System.out.println("\nPrinting SI value NL");
         Locale.setDefault(Locale.forLanguageTag("NL"));
-        Duration d = Duration.valueOf("10.0 uur");
-        Length l = Length.valueOf("5.0 km");
+        Duration d = Duration.valueOf("10,0 uur");
+        Length l = Length.valueOf("5,0 km");
         SIScalar pace = DoubleScalar.divide(d, l);
         System.out.println("pace has as unit " + pace.getDisplayUnit().toString());
         System.out.println("pace = " + pace.toString());

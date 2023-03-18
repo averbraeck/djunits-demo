@@ -1,12 +1,12 @@
 package org.djunits.demo.website;
 
-import java.util.regex.Matcher;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 import org.djunits.Throw;
 import org.djunits.unit.AccelerationUnit;
 import org.djunits.unit.DimensionlessUnit;
 import org.djunits.unit.FrequencyUnit;
-import org.djunits.value.util.ValueUtil;
 import org.djunits.value.vdouble.scalar.Acceleration;
 import org.djunits.value.vdouble.scalar.Dimensionless;
 import org.djunits.value.vdouble.scalar.Duration;
@@ -149,22 +149,26 @@ public class Jerk extends AbstractDoubleScalarRel<JerkUnit, Jerk>
      */
     public static Jerk valueOf(final String text)
     {
-        Throw.whenNull(text, "Error parsing Jerk: text to parse is null");
-        Throw.when(text.length() == 0, IllegalArgumentException.class, "Error parsing Jerk: empty text to parse");
-        Matcher matcher = ValueUtil.NUMBER_PATTERN.matcher(text);
-        if (matcher.find())
+        try
         {
-            int index = matcher.end();
+            NumberFormat formatter = NumberFormat.getInstance();
+            int index = 0;
+            while (index < text.length() && "0123456789,._eE+-".contains(text.substring(index, index + 1)))
+                index++;
             String unitString = text.substring(index).trim();
             String valueString = text.substring(0, index).trim();
             JerkUnit unit = JerkUnit.BASE.getUnitByAbbreviation(unitString);
-            if (unit != null)
-            {
-                double d = Double.parseDouble(valueString);
-                return new Jerk(d, unit);
-            }
+            if (unit == null)
+                throw new IllegalArgumentException("Unit " + unitString + " not found");
+            double d = formatter.parse(valueString).doubleValue();
+            return new Jerk(d, unit);
         }
-        throw new IllegalArgumentException("Error parsing Jerk from " + text);
+        catch (Exception exception)
+        {
+            throw new IllegalArgumentException(
+					"Error parsing Jerk from " + text + " using Locale " + Locale.getDefault(Locale.Category.FORMAT),
+                    exception);
+        }
     }
 
     /**
