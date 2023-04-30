@@ -3,7 +3,6 @@ package org.djunits.demo.website;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import org.djunits.Throw;
 import org.djunits.unit.AccelerationUnit;
 import org.djunits.unit.DimensionlessUnit;
 import org.djunits.unit.FrequencyUnit;
@@ -14,6 +13,7 @@ import org.djunits.value.vdouble.scalar.Frequency;
 import org.djunits.value.vdouble.scalar.SIScalar;
 import org.djunits.value.vdouble.scalar.base.AbstractDoubleScalarRel;
 import org.djunits.value.vdouble.scalar.base.DoubleScalar;
+import org.djutils.exceptions.Throw;
 
 /**
  * <p>
