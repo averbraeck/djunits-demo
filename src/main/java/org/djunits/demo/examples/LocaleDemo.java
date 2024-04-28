@@ -16,7 +16,7 @@ import org.djunits.value.vdouble.scalar.base.DoubleScalar;
  * <p>
  * Copyright (c) 2015-2024 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved. <br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
- * <p>
+ * </p>
  * @version $Revision: 672 $, $LastChangedDate: 2019-10-18 14:32:01 +0200 (Fri, 18 Oct 2019) $, by $Author: averbraeck $,
  *          initial version 3 sep. 2015 <br>
  * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
