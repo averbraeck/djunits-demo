@@ -27,7 +27,7 @@ public final class ExamplesInPackageDescription {
 	/**
 	 * Demo code for the package list page.
 	 * 
-	 * @param args String[]; not used
+	 * @param args not used
 	 * @throws UnitException         on error creating unit
 	 * @throws ValueRuntimeException when instantiate of a Value fails
 	 */

@@ -20,7 +20,7 @@ public final class ShowDisplayUnit
     }
 
     /**
-     * @param args String[]; args (blank)
+     * @param args args (blank)
      */
     public static void main(final String[] args)
     {

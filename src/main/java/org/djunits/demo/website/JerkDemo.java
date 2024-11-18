@@ -23,7 +23,7 @@ public final class JerkDemo {
 	}
 
 	/**
-	 * @param args String[]; args
+	 * @param args args
 	 * @throws ValueRuntimeException on error
 	 */
 	public static void main(final String[] args) throws ValueRuntimeException {

@@ -35,7 +35,7 @@ public final class VectorAndMatrix {
 	}
 
 	/**
-	 * @param args String[]; args
+	 * @param args args
 	 * @throws ValueRuntimeException on error
 	 */
 	public static void main(final String[] args) throws ValueRuntimeException {

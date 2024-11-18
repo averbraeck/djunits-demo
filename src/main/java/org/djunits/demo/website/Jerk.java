@@ -30,8 +30,8 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Construct Jerk scalar.
-     * @param value double; the double value
-     * @param unit JerkUnit; unit for the double value
+     * @param value the double value
+     * @param unit unit for the double value
      */
     public Jerk(final double value, final JerkUnit unit)
     {
@@ -40,7 +40,7 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Construct Jerk scalar.
-     * @param value Jerk; Scalar from which to construct this instance
+     * @param value Scalar from which to construct this instance
      */
     public Jerk(final Jerk value)
     {
@@ -56,8 +56,8 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Construct Jerk scalar.
-     * @param value double; the double value in SI units
-     * @return Jerk; the new scalar with the SI value
+     * @param value the double value in SI units
+     * @return the new scalar with the SI value
      */
     public static final Jerk instantiateSI(final double value)
     {
@@ -66,10 +66,10 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Interpolate between two values.
-     * @param zero Jerk; the low value
-     * @param one Jerk; the high value
-     * @param ratio double; the ratio between 0 and 1, inclusive
-     * @return Jerk; a Scalar at the ratio between
+     * @param zero the low value
+     * @param one the high value
+     * @param ratio the ratio between 0 and 1, inclusive
+     * @return a Scalar at the ratio between
      */
     public static Jerk interpolate(final Jerk zero, final Jerk one, final double ratio)
     {
@@ -78,9 +78,9 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Return the maximum value of two relative scalars.
-     * @param r1 Jerk; the first scalar
-     * @param r2 Jerk; the second scalar
-     * @return Jerk; the maximum value of two relative scalars
+     * @param r1 the first scalar
+     * @param r2 the second scalar
+     * @return the maximum value of two relative scalars
      */
     public static Jerk max(final Jerk r1, final Jerk r2)
     {
@@ -89,10 +89,10 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Return the maximum value of more than two relative scalars.
-     * @param r1 Jerk; the first scalar
-     * @param r2 Jerk; the second scalar
-     * @param rn Jerk...; the other scalars
-     * @return Jerk; the maximum value of more than two relative scalars
+     * @param r1 the first scalar
+     * @param r2 the second scalar
+     * @param rn the other scalars
+     * @return the maximum value of more than two relative scalars
      */
     public static Jerk max(final Jerk r1, final Jerk r2, final Jerk... rn)
     {
@@ -109,9 +109,9 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Return the minimum value of two relative scalars.
-     * @param r1 Jerk; the first scalar
-     * @param r2 Jerk; the second scalar
-     * @return Jerk; the minimum value of two relative scalars
+     * @param r1 the first scalar
+     * @param r2 the second scalar
+     * @return the minimum value of two relative scalars
      */
     public static Jerk min(final Jerk r1, final Jerk r2)
     {
@@ -120,10 +120,10 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Return the minimum value of more than two relative scalars.
-     * @param r1 Jerk; the first scalar
-     * @param r2 Jerk; the second scalar
-     * @param rn Jerk...; the other scalars
-     * @return Jerk; the minimum value of more than two relative scalars
+     * @param r1 the first scalar
+     * @param r2 the second scalar
+     * @param rn the other scalars
+     * @return the minimum value of more than two relative scalars
      */
     public static Jerk min(final Jerk r1, final Jerk r2, final Jerk... rn)
     {
@@ -142,8 +142,8 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
      * Returns a Jerk representation of a textual representation of a value with a unit. The String representation that can be
      * parsed is the double value in the unit, followed by the official abbreviation of the unit. Spaces are allowed, but not
      * required, between the value and the unit.
-     * @param text String; the textual representation to parse into a Jerk
-     * @return Jerk; the Scalar representation of the value in its unit
+     * @param text the textual representation to parse into a Jerk
+     * @return the Scalar representation of the value in its unit
      * @throws IllegalArgumentException when the text cannot be parsed
      * @throws NullPointerException when the text argument is null
      */
@@ -173,9 +173,9 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Returns a Jerk based on a value and the textual representation of the unit.
-     * @param value double; the value to use
-     * @param unitString String; the textual representation of the unit
-     * @return Jerk; the Scalar representation of the value in its unit
+     * @param value the value to use
+     * @param unitString the textual representation of the unit
+     * @return the Scalar representation of the value in its unit
      * @throws IllegalArgumentException when the unit cannot be parsed or is incorrect
      * @throws NullPointerException when the unitString argument is null
      */
@@ -193,7 +193,7 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Calculate the division of Jerk and Jerk, which results in a Dimensionless scalar.
-     * @param v Jerk; Jerk scalar
+     * @param v Jerk scalar
      * @return Dimensionless scalar as a division of Jerk and Jerk
      */
     public final Dimensionless divide(final Jerk v)
@@ -203,7 +203,7 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Calculate the multiplication of Jerk and Duration, which results in an Acceleration scalar.
-     * @param v Duration; Duration scalar
+     * @param v Duration scalar
      * @return Acceleration scalar as a multiplication of Jerk and Duration
      */
     public final Acceleration times(final Duration v)
@@ -213,7 +213,7 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 
     /**
      * Calculate the division of Jerk and Acceleration, which results in a Frequency scalar.
-     * @param v Acceleration; Acceleration scalar
+     * @param v Acceleration scalar
      * @return Frequency scalar as a division of Jerk and Accelration
      */
     public final Frequency times(final Acceleration v)

@@ -47,9 +47,9 @@ public class JerkUnit extends Unit<JerkUnit>
 
     /**
      * Determine the conversion factor to the base jerk unit, given a length unit and a duration unit.
-     * @param length String; a length unit, e.g. km
-     * @param duration String; a duration unit, e.g. h
-     * @return double; the conversion factor from the provided units (e.g. km/h3) to the standard unit (m/s3)
+     * @param length a length unit, e.g. km
+     * @param duration a duration unit, e.g. h
+     * @return the conversion factor from the provided units (e.g. km/h3) to the standard unit (m/s3)
      */
     private static double factorLD(final String length, final String duration)
     {

@@ -35,7 +35,7 @@ public final class MultiplyAndDivide implements UNITS {
 	 * Create some scalar values to demonstrate conversion from and to related
 	 * units.
 	 * 
-	 * @param args String[]; the command line arguments; not used
+	 * @param args the command line arguments; not used
 	 * @throws ValueRuntimeException in case of error
 	 */
 	public static void main(final String[] args) throws ValueRuntimeException {

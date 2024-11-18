@@ -23,7 +23,7 @@ public final class NewTypes
     }
 
     /**
-     * @param args String[]; empty
+     * @param args empty
      * @throws UnitException when unit cannot be created
      */
     public static void main(final String[] args) throws UnitException

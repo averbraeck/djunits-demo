@@ -21,7 +21,7 @@ public final class AbsAndRel
     }
 
     /**
-     * @param args String[]; args
+     * @param args args
      */
     public static void main(final String[] args)
     {

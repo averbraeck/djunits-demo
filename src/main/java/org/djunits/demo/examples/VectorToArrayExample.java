@@ -34,7 +34,7 @@ public final class VectorToArrayExample {
 	}
 
 	/**
-	 * @param args String[]; the arguments for the main program, not used
+	 * @param args the arguments for the main program, not used
 	 * @throws ValueRuntimeException on vector error
 	 */
 	public static void main(final String[] args) throws ValueRuntimeException {

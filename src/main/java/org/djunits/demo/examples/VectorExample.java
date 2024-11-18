@@ -13,7 +13,7 @@ public final class VectorExample {
 	}
 
 	/**
-	 * @param args String[]; not used
+	 * @param args not used
 	 */
 	public static void main(final String[] args) {
 		double[] data = new double[10];
