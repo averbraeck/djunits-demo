@@ -10,9 +10,7 @@ import org.djunits.value.vdouble.scalar.Acceleration;
 import org.djunits.value.vdouble.scalar.Dimensionless;
 import org.djunits.value.vdouble.scalar.Duration;
 import org.djunits.value.vdouble.scalar.Frequency;
-import org.djunits.value.vdouble.scalar.SIScalar;
 import org.djunits.value.vdouble.scalar.base.DoubleScalarRel;
-import org.djunits.value.vdouble.scalar.base.DoubleScalar;
 import org.djutils.exceptions.Throw;
 
 /**
@@ -166,7 +164,7 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
         catch (Exception exception)
         {
             throw new IllegalArgumentException(
-					"Error parsing Jerk from " + text + " using Locale " + Locale.getDefault(Locale.Category.FORMAT),
+                    "Error parsing Jerk from " + text + " using Locale " + Locale.getDefault(Locale.Category.FORMAT),
                     exception);
         }
     }
@@ -219,13 +217,6 @@ public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
     public final Frequency times(final Acceleration v)
     {
         return new Frequency(this.si * v.si, FrequencyUnit.SI);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public SIScalar reciprocal()
-    {
-        return DoubleScalar.divide(Dimensionless.ONE, this);
     }
 
 }

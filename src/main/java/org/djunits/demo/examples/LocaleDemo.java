@@ -9,7 +9,6 @@ import org.djunits.value.vdouble.scalar.Duration;
 import org.djunits.value.vdouble.scalar.Length;
 import org.djunits.value.vdouble.scalar.SIScalar;
 import org.djunits.value.vdouble.scalar.Speed;
-import org.djunits.value.vdouble.scalar.base.DoubleScalar;
 
 /**
  * This Java code demonstrates conversions between related unit using DJUNITS.
@@ -42,66 +41,66 @@ public final class LocaleDemo implements UNITS
         System.out.println(hour.toTextualString());
         System.out.println(hour);
 
-    	System.out.println("\nPrinting NL");
+        System.out.println("\nPrinting NL");
         Locale.setDefault(Locale.forLanguageTag("NL"));
         System.out.println(hour.toTextualString());
         System.out.println(hour);
 
         System.out.println("\nParsing UK");
-    	Locale.setDefault(new Locale("en", "UK"));
-    	Speed speed = Speed.valueOf("14.2 km/h");
+        Locale.setDefault(new Locale("en", "UK"));
+        Speed speed = Speed.valueOf("14.2 km/h");
         System.out.println(speed.toTextualString());
         System.out.println(speed.toDisplayString());
         System.out.println(speed);
 
         try
         {
-        	speed = Speed.valueOf("14.2 km/u");
-        	System.err.println("WRONG, should not be able to parse 14.2 km/u in UK locale");
+            speed = Speed.valueOf("14.2 km/u");
+            System.err.println("WRONG, should not be able to parse 14.2 km/u in UK locale");
         }
         catch (Exception e)
         {
-        	System.out.println("Correctly failed to parse 14.2 km/u in UK locale");
+            System.out.println("Correctly failed to parse 14.2 km/u in UK locale");
         }
 
         System.out.println("\nParsing NL");
-    	Locale.setDefault(new Locale("nl", "NL"));
-    	speed = Speed.valueOf("14,2 km/u");
+        Locale.setDefault(new Locale("nl", "NL"));
+        speed = Speed.valueOf("14,2 km/u");
         System.out.println(speed.toTextualString());
         System.out.println(speed.toDisplayString());
         System.out.println(speed);
-        
+
         try
         {
-        	speed = Speed.valueOf("14.2 km/z");
-        	System.err.println("WRONG, should not be able to parse 14.2 km/z in NL locale");
+            speed = Speed.valueOf("14.2 km/z");
+            System.err.println("WRONG, should not be able to parse 14.2 km/z in NL locale");
         }
         catch (Exception e)
         {
-        	System.out.println("Correctly failed to parse 14.2 km/z in NL locale");
+            System.out.println("Correctly failed to parse 14.2 km/z in NL locale");
         }
-        
+
         try
         {
-        	speed = Speed.valueOf("14,2 km/z");
-        	System.err.println("WRONG, should not be able to parse 14,2 km/z in NL locale");
+            speed = Speed.valueOf("14,2 km/z");
+            System.err.println("WRONG, should not be able to parse 14,2 km/z in NL locale");
         }
         catch (Exception e)
         {
-        	System.out.println("Correctly failed to parse 14,2 km/z in NL locale");
+            System.out.println("Correctly failed to parse 14,2 km/z in NL locale");
         }
-        
+
         try
         {
-        	speed = Speed.valueOf("18,99 km/h");
-        	System.out.println("Correctly parsed 18.99 km/h using fallback locale as " + speed.toDisplayString());
+            speed = Speed.valueOf("18,99 km/h");
+            System.out.println("Correctly parsed 18.99 km/h using fallback locale as " + speed.toDisplayString());
         }
         catch (Exception e)
         {
-        	System.err.println("WRONG, should not be fail on parsing 18.99 km/h in NL locale -- fallback should be ok");
+            System.err.println("WRONG, should not be fail on parsing 18.99 km/h in NL locale -- fallback should be ok");
         }
-        
-    	System.out.println("\nPrinting NL");
+
+        System.out.println("\nPrinting NL");
         Locale.setDefault(Locale.forLanguageTag("NL"));
         System.out.println(new Speed(1234455466787.0, SpeedUnit.MILE_PER_HOUR).toDisplayString());
         System.out.println(new Speed(1230000000000.0, SpeedUnit.MILE_PER_HOUR).toDisplayString());
@@ -116,19 +115,19 @@ public final class LocaleDemo implements UNITS
         System.out.println(new Speed(0.112, SpeedUnit.MILE_PER_HOUR).toDisplayString());
         System.out.println(new Speed(0.000112, SpeedUnit.KNOT).toTextualString());
         System.out.println(new Speed(1E40, SpeedUnit.MILE_PER_HOUR).toDisplayString());
-        
-    	System.out.println("\nPrinting SI value NL");
+
+        System.out.println("\nPrinting SI value NL");
         Locale.setDefault(Locale.forLanguageTag("NL"));
         Duration d = Duration.valueOf("10,0 uur");
         Length l = Length.valueOf("5,0 km");
-        SIScalar pace = DoubleScalar.divide(d, l);
+        SIScalar pace = SIScalar.divide(d, l);
         System.out.println("pace has as unit " + pace.getDisplayUnit().toString());
         System.out.println("pace = " + pace.toString());
 
-    	System.out.println("\nPrinting SI value US");
+        System.out.println("\nPrinting SI value US");
         Locale.setDefault(Locale.US);
         System.out.println("pace has as unit " + pace.getDisplayUnit().toString());
         System.out.println("pace = " + pace.toString());
-        
+
     }
 }
