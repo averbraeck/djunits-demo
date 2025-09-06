@@ -45,7 +45,7 @@ public class JerkVector extends DoubleVectorRel<JerkUnit, Jerk, JerkVector>
     @Override
     public Jerk instantiateScalarSI(final double valueSI, final JerkUnit displayUnit)
     {
-        Jerk result = Jerk.instantiateSI(valueSI);
+        Jerk result = Jerk.ofSI(valueSI);
         result.setDisplayUnit(displayUnit);
         return result;
     }
