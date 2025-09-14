@@ -23,7 +23,6 @@ import org.djunits.value.vfloat.vector.FloatDimensionlessVector;
 import org.djunits.value.vfloat.vector.FloatEnergyVector;
 import org.djunits.value.vfloat.vector.FloatSIVector;
 import org.djunits.value.vfloat.vector.FloatTorqueVector;
-import org.djutils.exceptions.Try;
 
 /**
  * DimensionlessExample to show the use of a Dimensionless quantity.
@@ -61,8 +60,25 @@ public class DimensionlessExample
         System.out.println("|" + d2 + "|");
         Dimensionless d2s = Dimensionless.of(2.7818, " ");
         System.out.println("|" + d2s + "|");
-        Try.testFail(() -> Dimensionless.of(2.7818, "unit"));
-        Try.testFail(() -> Dimensionless.of(2.7818, "1"));
+        
+        try
+        {
+            Dimensionless.of(2.7818, "unit");
+        }
+        catch (Exception e)
+        {
+            System.out.println("Cannot instantiate Dimensionless.of(2.7818, \"unit\")");
+        }
+
+        try
+        {
+            Dimensionless.of(2.7818, "1");
+        }
+        catch (Exception e)
+        {
+            System.out.println("Cannot instantiate Dimensionless.of(2.7818, \"1\")");
+        }
+
         Dimensionless d3 = Dimensionless.valueOf("1.44");
         System.out.println("|" + d3 + "|");
         Dimensionless d3a = Dimensionless.valueOf("1.44 ");
@@ -94,7 +110,14 @@ public class DimensionlessExample
         System.out.println("|" + d2 + "|");
         FloatDimensionless d2s = FloatDimensionless.of(2.7818f, " ");
         System.out.println("|" + d2s + "|");
-        Try.testFail(() -> FloatDimensionless.of(2.7818f, "unit"));
+        try
+        {
+            FloatDimensionless.of(2.7818f, "unit");
+        }
+        catch (Exception e)
+        {
+            System.out.println("Cannot instantiate FloatDimensionless.of(2.7818, \"unit\")");
+        }
         FloatDimensionless d3 = FloatDimensionless.valueOf("1.44");
         System.out.println("|" + d3 + "|");
         FloatDimensionless d3a = FloatDimensionless.valueOf("1.44 ");
