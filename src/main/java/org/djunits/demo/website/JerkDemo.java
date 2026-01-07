@@ -1,9 +1,9 @@
 package org.djunits.demo.website;
 
-import org.djunits.unit.scale.IdentityScale;
-import org.djunits.value.ValueRuntimeException;
-import org.djunits.value.storage.StorageType;
-import org.djunits.value.vdouble.vector.data.DoubleVectorData;
+import org.djunits.old.unit.scale.IdentityScale;
+import org.djunits.old.value.ValueRuntimeException;
+import org.djunits.old.value.storage.StorageType;
+import org.djunits.old.value.vdouble.vector.data.DoubleVectorData;
 
 /**
  * <p>
@@ -13,8 +13,8 @@ import org.djunits.value.vdouble.vector.data.DoubleVectorData;
  * <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
  * </p>
  * 
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
- * @author <a href="https://www.tudelft.nl/staff/p.knoppers/">Peter Knoppers</a>
+ * @author Alexander Verbraeck
+ * @author Peter Knoppers
  */
 public final class JerkDemo {
 	/** */

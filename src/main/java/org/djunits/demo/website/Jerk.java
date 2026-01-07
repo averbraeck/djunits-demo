@@ -3,14 +3,14 @@ package org.djunits.demo.website;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import org.djunits.unit.AccelerationUnit;
-import org.djunits.unit.DimensionlessUnit;
-import org.djunits.unit.FrequencyUnit;
-import org.djunits.value.vdouble.scalar.Acceleration;
-import org.djunits.value.vdouble.scalar.Dimensionless;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.scalar.Frequency;
-import org.djunits.value.vdouble.scalar.base.DoubleScalarRel;
+import org.djunits.old.unit.AccelerationUnit;
+import org.djunits.old.unit.DimensionlessUnit;
+import org.djunits.old.unit.FrequencyUnit;
+import org.djunits.old.value.vdouble.scalar.Acceleration;
+import org.djunits.old.value.vdouble.scalar.Dimensionless;
+import org.djunits.old.value.vdouble.scalar.Duration;
+import org.djunits.old.value.vdouble.scalar.Frequency;
+import org.djunits.old.value.vdouble.scalar.base.DoubleScalarRel;
 import org.djutils.exceptions.Throw;
 
 /**
@@ -18,8 +18,8 @@ import org.djutils.exceptions.Throw;
  * Copyright (c) 2013-2025 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved. <br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
  * </p>
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
- * @author <a href="https://www.tudelft.nl/staff/p.knoppers/">Peter Knoppers</a>
+ * @author Alexander Verbraeck
+ * @author Peter Knoppers
  */
 public class Jerk extends DoubleScalarRel<JerkUnit, Jerk>
 {
