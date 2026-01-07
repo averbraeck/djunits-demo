@@ -1,28 +1,28 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.DimensionlessUnit;
-import org.djunits.unit.SIUnit;
-import org.djunits.unit.util.UnitException;
-import org.djunits.value.vdouble.scalar.Dimensionless;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.scalar.Energy;
-import org.djunits.value.vdouble.scalar.Frequency;
-import org.djunits.value.vdouble.scalar.SIScalar;
-import org.djunits.value.vdouble.scalar.Torque;
-import org.djunits.value.vdouble.vector.DimensionlessVector;
-import org.djunits.value.vdouble.vector.EnergyVector;
-import org.djunits.value.vdouble.vector.SIVector;
-import org.djunits.value.vdouble.vector.TorqueVector;
-import org.djunits.value.vfloat.scalar.FloatDimensionless;
-import org.djunits.value.vfloat.scalar.FloatDuration;
-import org.djunits.value.vfloat.scalar.FloatEnergy;
-import org.djunits.value.vfloat.scalar.FloatFrequency;
-import org.djunits.value.vfloat.scalar.FloatSIScalar;
-import org.djunits.value.vfloat.scalar.FloatTorque;
-import org.djunits.value.vfloat.vector.FloatDimensionlessVector;
-import org.djunits.value.vfloat.vector.FloatEnergyVector;
-import org.djunits.value.vfloat.vector.FloatSIVector;
-import org.djunits.value.vfloat.vector.FloatTorqueVector;
+import org.djunits.old.unit.DimensionlessUnit;
+import org.djunits.old.unit.SIUnit;
+import org.djunits.old.unit.util.UnitException;
+import org.djunits.old.value.vdouble.scalar.Dimensionless;
+import org.djunits.old.value.vdouble.scalar.Duration;
+import org.djunits.old.value.vdouble.scalar.Energy;
+import org.djunits.old.value.vdouble.scalar.Frequency;
+import org.djunits.old.value.vdouble.scalar.SIScalar;
+import org.djunits.old.value.vdouble.scalar.Torque;
+import org.djunits.old.value.vdouble.vector.DimensionlessVector;
+import org.djunits.old.value.vdouble.vector.EnergyVector;
+import org.djunits.old.value.vdouble.vector.SIVector;
+import org.djunits.old.value.vdouble.vector.TorqueVector;
+import org.djunits.old.value.vfloat.scalar.FloatDimensionless;
+import org.djunits.old.value.vfloat.scalar.FloatDuration;
+import org.djunits.old.value.vfloat.scalar.FloatEnergy;
+import org.djunits.old.value.vfloat.scalar.FloatFrequency;
+import org.djunits.old.value.vfloat.scalar.FloatSIScalar;
+import org.djunits.old.value.vfloat.scalar.FloatTorque;
+import org.djunits.old.value.vfloat.vector.FloatDimensionlessVector;
+import org.djunits.old.value.vfloat.vector.FloatEnergyVector;
+import org.djunits.old.value.vfloat.vector.FloatSIVector;
+import org.djunits.old.value.vfloat.vector.FloatTorqueVector;
 
 /**
  * DimensionlessExample to show the use of a Dimensionless quantity.
@@ -30,7 +30,7 @@ import org.djunits.value.vfloat.vector.FloatTorqueVector;
  * Copyright (c) 2020-2020 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved. <br>
  * BSD-style license. See <a href="https://opentrafficsim.org/docs/current/license.html">OpenTrafficSim License</a>.
  * </p>
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
+ * @author Alexander Verbraeck
  * @author <a href="https://www.tudelft.nl/pknoppers">Peter Knoppers</a>
  * @author <a href="https://www.transport.citg.tudelft.nl">Wouter Schakel</a>
  */

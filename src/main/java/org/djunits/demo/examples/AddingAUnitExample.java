@@ -1,11 +1,9 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.DurationUnit;
-import org.djunits.unit.LengthUnit;
-import org.djunits.unit.SpeedUnit;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.scalar.Length;
-import org.djunits.value.vdouble.scalar.Speed;
+import org.djunits.quantity.Duration;
+import org.djunits.quantity.Length;
+import org.djunits.quantity.Speed;
+import org.djunits.unit.system.UnitSystem;
 
 /** Example for adding a unit. */
 public final class AddingAUnitExample
@@ -17,15 +15,14 @@ public final class AddingAUnitExample
     }
 
     /** a new LengthUnit. */
-    public static final LengthUnit FURLONG = LengthUnit.FOOT.deriveLinear(660.0, "fr", "Furlong");
+    public static final Length.Unit FURLONG = Length.Unit.FOOT.deriveUnit("fr", "Furlong", 660.0, UnitSystem.OTHER);
 
     /** a new DurationUnit. */
-    public static final DurationUnit FORTNIGHT = DurationUnit.DAY.deriveLinear(14.0, "fn", "Fortnight");
+    public static final Duration.Unit FORTNIGHT = Duration.Unit.DAY.deriveUnit("fn", "Fortnight", 14.0, UnitSystem.OTHER);
 
-    /** a new SpeedUnit based on the new LengthUnit and the new DurationUnit. */
-    public static final SpeedUnit FURLONGS_PER_FORTNIGHT =
-            SpeedUnit.SI.deriveLinear(FURLONG.getScale().toStandardUnit(1.0) / FORTNIGHT.getScale().toStandardUnit(1.0),
-                    "fr/fn", "Furlongs per Fortnight");
+    /** a new Speed.Unit based on the new Length.Unit and the new DurationUnit. */
+    public static final Speed.Unit FURLONGS_PER_FORTNIGHT = Speed.Unit.SI.deriveUnit("fr/fn", "Furlongs per Fortnight",
+            FURLONG.getScale().toBaseValue(1.0) / FORTNIGHT.getScale().toBaseValue(1.0), UnitSystem.OTHER);
 
     /**
      * @param args can be blank
@@ -37,7 +34,7 @@ public final class AddingAUnitExample
         Duration twoFortNight = new Duration(2.0, FORTNIGHT);
         System.out.println(twoFortNight);
         Speed speed = oneThousandFurlong.divide(twoFortNight);
-        System.out.println(speed); // Uses SpeedUnit.SI; m/s
+        System.out.println(speed + "(should be around 0.083152 m/s)");
         System.out.println(speed.toString(FURLONGS_PER_FORTNIGHT));
     }
 

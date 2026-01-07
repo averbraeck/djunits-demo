@@ -1,9 +1,9 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.LengthUnit;
-import org.djunits.unit.scale.Scale;
-import org.djunits.value.vdouble.function.DoubleFunction;
-import org.djunits.value.vdouble.vector.LengthVector;
+import org.djunits.old.unit.LengthUnit;
+import org.djunits.old.unit.scale.Scale;
+import org.djunits.old.value.vdouble.function.DoubleFunction;
+import org.djunits.old.value.vdouble.vector.LengthVector;
 
 /** Demo for Vector. */
 public final class VectorExample {

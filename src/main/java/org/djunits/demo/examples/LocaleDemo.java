@@ -2,13 +2,13 @@ package org.djunits.demo.examples;
 
 import java.util.Locale;
 
-import org.djunits.unit.DurationUnit;
-import org.djunits.unit.SpeedUnit;
-import org.djunits.unit.util.UNITS;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.scalar.Length;
-import org.djunits.value.vdouble.scalar.SIScalar;
-import org.djunits.value.vdouble.scalar.Speed;
+import org.djunits.old.unit.DurationUnit;
+import org.djunits.old.unit.SpeedUnit;
+import org.djunits.old.unit.util.UNITS;
+import org.djunits.old.value.vdouble.scalar.Duration;
+import org.djunits.old.value.vdouble.scalar.Length;
+import org.djunits.old.value.vdouble.scalar.SIScalar;
+import org.djunits.old.value.vdouble.scalar.Speed;
 
 /**
  * This Java code demonstrates conversions between related unit using DJUNITS.
@@ -18,8 +18,8 @@ import org.djunits.value.vdouble.scalar.Speed;
  * </p>
  * @version $Revision: 672 $, $LastChangedDate: 2019-10-18 14:32:01 +0200 (Fri, 18 Oct 2019) $, by $Author: averbraeck $,
  *          initial version 3 sep. 2015 <br>
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
- * @author <a href="https://www.tudelft.nl/staff/p.knoppers/">Peter Knoppers</a>
+ * @author Alexander Verbraeck
+ * @author Peter Knoppers
  */
 public final class LocaleDemo implements UNITS
 {

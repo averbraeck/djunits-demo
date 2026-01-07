@@ -1,8 +1,8 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.LengthUnit;
-import org.djunits.value.vdouble.scalar.Length;
-import org.djunits.value.vfloat.scalar.FloatLength;
+import org.djunits.old.unit.LengthUnit;
+import org.djunits.old.value.vdouble.scalar.Length;
+import org.djunits.old.value.vfloat.scalar.FloatLength;
 
 /**
  * Parsing.java. <br>
@@ -10,7 +10,7 @@ import org.djunits.value.vfloat.scalar.FloatLength;
  * Copyright (c) 2003-2018 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved.<br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
  * </p>
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
+ * @author Alexander Verbraeck
  */
 public final class Parsing
 {

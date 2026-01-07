@@ -1,13 +1,13 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.LengthUnit;
-import org.djunits.unit.MassUnit;
-import org.djunits.unit.SpeedUnit;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.scalar.Energy;
-import org.djunits.value.vdouble.scalar.Length;
-import org.djunits.value.vdouble.scalar.Mass;
-import org.djunits.value.vdouble.scalar.Speed;
+import org.djunits.old.unit.LengthUnit;
+import org.djunits.old.unit.MassUnit;
+import org.djunits.old.unit.SpeedUnit;
+import org.djunits.old.value.vdouble.scalar.Duration;
+import org.djunits.old.value.vdouble.scalar.Energy;
+import org.djunits.old.value.vdouble.scalar.Length;
+import org.djunits.old.value.vdouble.scalar.Mass;
+import org.djunits.old.value.vdouble.scalar.Speed;
 
 /** demo for conversions. */
 public final class ExamplesSpeedConversions

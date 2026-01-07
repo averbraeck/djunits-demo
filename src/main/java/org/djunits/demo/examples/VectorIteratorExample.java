@@ -3,18 +3,18 @@ package org.djunits.demo.examples;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import org.djunits.unit.SpeedUnit;
-import org.djunits.unit.TimeUnit;
-import org.djunits.value.ValueRuntimeException;
-import org.djunits.value.storage.StorageType;
-import org.djunits.value.vdouble.scalar.Speed;
-import org.djunits.value.vdouble.scalar.Time;
-import org.djunits.value.vdouble.vector.SpeedVector;
-import org.djunits.value.vdouble.vector.TimeVector;
-import org.djunits.value.vfloat.scalar.FloatSpeed;
-import org.djunits.value.vfloat.scalar.FloatTime;
-import org.djunits.value.vfloat.vector.FloatSpeedVector;
-import org.djunits.value.vfloat.vector.FloatTimeVector;
+import org.djunits.old.unit.SpeedUnit;
+import org.djunits.old.unit.TimeUnit;
+import org.djunits.old.value.ValueRuntimeException;
+import org.djunits.old.value.storage.StorageType;
+import org.djunits.old.value.vdouble.scalar.Speed;
+import org.djunits.old.value.vdouble.scalar.Time;
+import org.djunits.old.value.vdouble.vector.SpeedVector;
+import org.djunits.old.value.vdouble.vector.TimeVector;
+import org.djunits.old.value.vfloat.scalar.FloatSpeed;
+import org.djunits.old.value.vfloat.scalar.FloatTime;
+import org.djunits.old.value.vfloat.vector.FloatSpeedVector;
+import org.djunits.old.value.vfloat.vector.FloatTimeVector;
 
 /**
  * <p>
@@ -24,8 +24,8 @@ import org.djunits.value.vfloat.vector.FloatTimeVector;
  * <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
  * </p>
  * 
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
- * @author <a href="https://www.tudelft.nl/staff/p.knoppers/">Peter Knoppers</a>
+ * @author Alexander Verbraeck
+ * @author Peter Knoppers
  */
 public final class VectorIteratorExample {
 	/** Utility constructor. */

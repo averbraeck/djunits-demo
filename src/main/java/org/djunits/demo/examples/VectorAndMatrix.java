@@ -1,20 +1,20 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.AbsoluteTemperatureUnit;
-import org.djunits.unit.DurationUnit;
-import org.djunits.unit.LengthUnit;
-import org.djunits.unit.TemperatureUnit;
-import org.djunits.unit.TimeUnit;
-import org.djunits.unit.scale.IdentityScale;
-import org.djunits.value.ValueRuntimeException;
-import org.djunits.value.storage.StorageType;
-import org.djunits.value.vdouble.matrix.LengthMatrix;
-import org.djunits.value.vdouble.matrix.data.DoubleMatrixData;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.vector.AbsoluteTemperatureVector;
-import org.djunits.value.vdouble.vector.DurationVector;
-import org.djunits.value.vdouble.vector.TemperatureVector;
-import org.djunits.value.vdouble.vector.TimeVector;
+import org.djunits.old.unit.AbsoluteTemperatureUnit;
+import org.djunits.old.unit.DurationUnit;
+import org.djunits.old.unit.LengthUnit;
+import org.djunits.old.unit.TemperatureUnit;
+import org.djunits.old.unit.TimeUnit;
+import org.djunits.old.unit.scale.IdentityScale;
+import org.djunits.old.value.ValueRuntimeException;
+import org.djunits.old.value.storage.StorageType;
+import org.djunits.old.value.vdouble.matrix.LengthMatrix;
+import org.djunits.old.value.vdouble.matrix.data.DoubleMatrixData;
+import org.djunits.old.value.vdouble.scalar.Duration;
+import org.djunits.old.value.vdouble.vector.AbsoluteTemperatureVector;
+import org.djunits.old.value.vdouble.vector.DurationVector;
+import org.djunits.old.value.vdouble.vector.TemperatureVector;
+import org.djunits.old.value.vdouble.vector.TimeVector;
 
 /**
  * <p>
@@ -24,8 +24,8 @@ import org.djunits.value.vdouble.vector.TimeVector;
  * <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
  * </p>
  * 
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
- * @author <a href="https://www.tudelft.nl/staff/p.knoppers/">Peter Knoppers</a>
+ * @author Alexander Verbraeck
+ * @author Peter Knoppers
  */
 public final class VectorAndMatrix {
 

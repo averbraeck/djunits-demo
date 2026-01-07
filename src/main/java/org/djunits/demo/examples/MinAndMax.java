@@ -1,21 +1,21 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.AccelerationUnit;
-import org.djunits.unit.DimensionlessUnit;
-import org.djunits.unit.DirectionUnit;
-import org.djunits.unit.DurationUnit;
-import org.djunits.unit.SpeedUnit;
-import org.djunits.value.ValueRuntimeException;
-import org.djunits.value.vdouble.scalar.Dimensionless;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.scalar.Speed;
-import org.djunits.value.vdouble.vector.DimensionlessVector;
-import org.djunits.value.vdouble.vector.DurationVector;
-import org.djunits.value.vdouble.vector.SpeedVector;
-import org.djunits.value.vfloat.scalar.FloatAcceleration;
-import org.djunits.value.vfloat.scalar.FloatDirection;
-import org.djunits.value.vfloat.vector.FloatAccelerationVector;
-import org.djunits.value.vfloat.vector.FloatDirectionVector;
+import org.djunits.old.unit.AccelerationUnit;
+import org.djunits.old.unit.DimensionlessUnit;
+import org.djunits.old.unit.DirectionUnit;
+import org.djunits.old.unit.DurationUnit;
+import org.djunits.old.unit.SpeedUnit;
+import org.djunits.old.value.ValueRuntimeException;
+import org.djunits.old.value.vdouble.scalar.Dimensionless;
+import org.djunits.old.value.vdouble.scalar.Duration;
+import org.djunits.old.value.vdouble.scalar.Speed;
+import org.djunits.old.value.vdouble.vector.DimensionlessVector;
+import org.djunits.old.value.vdouble.vector.DurationVector;
+import org.djunits.old.value.vdouble.vector.SpeedVector;
+import org.djunits.old.value.vfloat.scalar.FloatAcceleration;
+import org.djunits.old.value.vfloat.scalar.FloatDirection;
+import org.djunits.old.value.vfloat.vector.FloatAccelerationVector;
+import org.djunits.old.value.vfloat.vector.FloatDirectionVector;
 
 /**
  * Tests for min and max.
@@ -26,8 +26,8 @@ import org.djunits.value.vfloat.vector.FloatDirectionVector;
  * <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
  * </p>
  * 
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
- * @author <a href="https://www.tudelft.nl/staff/p.knoppers/">Peter Knoppers</a>
+ * @author Alexander Verbraeck
+ * @author Peter Knoppers
  */
 public final class MinAndMax {
 	/** Utility constructor. */

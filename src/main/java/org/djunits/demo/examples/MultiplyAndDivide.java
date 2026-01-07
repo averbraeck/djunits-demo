@@ -2,13 +2,13 @@ package org.djunits.demo.examples;
 
 import java.util.Locale;
 
-import org.djunits.unit.SpeedUnit;
-import org.djunits.unit.util.UNITS;
-import org.djunits.value.ValueRuntimeException;
-import org.djunits.value.vdouble.scalar.Duration;
-import org.djunits.value.vdouble.scalar.Length;
-import org.djunits.value.vdouble.scalar.Speed;
-import org.djunits.value.vdouble.vector.SpeedVector;
+import org.djunits.old.unit.SpeedUnit;
+import org.djunits.old.unit.util.UNITS;
+import org.djunits.old.value.ValueRuntimeException;
+import org.djunits.old.value.vdouble.scalar.Duration;
+import org.djunits.old.value.vdouble.scalar.Length;
+import org.djunits.old.value.vdouble.scalar.Speed;
+import org.djunits.old.value.vdouble.vector.SpeedVector;
 
 /**
  * This Java code demonstrates multiplication and division using DJUNITS.
@@ -22,8 +22,8 @@ import org.djunits.value.vdouble.vector.SpeedVector;
  * @version $Revision: 954 $, $LastChangedDate: 2022-01-10 03:42:57 +0100 (Mon,
  *          10 Jan 2022) $, by $Author: averbraeck $, initial version 3 sep.
  *          2015 <br>
- * @author <a href="https://www.tudelft.nl/averbraeck">Alexander Verbraeck</a>
- * @author <a href="https://www.tudelft.nl/staff/p.knoppers/">Peter Knoppers</a>
+ * @author Alexander Verbraeck
+ * @author Peter Knoppers
  */
 public final class MultiplyAndDivide implements UNITS {
 	/** */

@@ -2,14 +2,14 @@ package org.djunits.demo.examples;
 
 import java.util.Map;
 
-import org.djunits.unit.AreaUnit;
-import org.djunits.unit.ElectricalChargeUnit;
-import org.djunits.unit.FrequencyUnit;
-import org.djunits.unit.LengthUnit;
-import org.djunits.unit.LinearDensityUnit;
-import org.djunits.unit.MassUnit;
-import org.djunits.unit.Unit;
-import org.djunits.unit.VolumeUnit;
+import org.djunits.old.unit.AreaUnit;
+import org.djunits.old.unit.ElectricalChargeUnit;
+import org.djunits.old.unit.FrequencyUnit;
+import org.djunits.old.unit.LengthUnit;
+import org.djunits.old.unit.LinearDensityUnit;
+import org.djunits.old.unit.MassUnit;
+import org.djunits.old.unit.Unit;
+import org.djunits.old.unit.VolumeUnit;
 
 /**
  * UnitPrefix.java.
@@ -17,7 +17,7 @@ import org.djunits.unit.VolumeUnit;
  * Copyright (c) 2019-2025 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved. <br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
  * </p>
- * @author <a href="https://www.tudelft.nl/averbraeck" target="_blank">Alexander Verbraeck</a>
+ * @author Alexander Verbraeck
  */
 public final class UnitPrefix
 {

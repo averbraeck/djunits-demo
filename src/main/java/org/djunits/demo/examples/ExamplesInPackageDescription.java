@@ -1,19 +1,19 @@
 package org.djunits.demo.examples;
 
-import org.djunits.unit.AbsoluteTemperatureUnit;
-import org.djunits.unit.AreaUnit;
-import org.djunits.unit.LengthUnit;
-import org.djunits.unit.SIUnit;
-import org.djunits.unit.util.UnitException;
-import org.djunits.value.ValueRuntimeException;
-import org.djunits.value.storage.StorageType;
-import org.djunits.value.vdouble.scalar.Length;
-import org.djunits.value.vdouble.scalar.SIScalar;
-import org.djunits.value.vdouble.vector.AbsoluteTemperatureVector;
-import org.djunits.value.vfloat.scalar.FloatLength;
-import org.djunits.value.vfloat.scalar.FloatSIScalar;
-import org.djunits.value.vfloat.vector.FloatAreaVector;
-import org.djunits.value.vfloat.vector.FloatSIVector;
+import org.djunits.old.unit.AbsoluteTemperatureUnit;
+import org.djunits.old.unit.AreaUnit;
+import org.djunits.old.unit.LengthUnit;
+import org.djunits.old.unit.SIUnit;
+import org.djunits.old.unit.util.UnitException;
+import org.djunits.old.value.ValueRuntimeException;
+import org.djunits.old.value.storage.StorageType;
+import org.djunits.old.value.vdouble.scalar.Length;
+import org.djunits.old.value.vdouble.scalar.SIScalar;
+import org.djunits.old.value.vdouble.vector.AbsoluteTemperatureVector;
+import org.djunits.old.value.vfloat.scalar.FloatLength;
+import org.djunits.old.value.vfloat.scalar.FloatSIScalar;
+import org.djunits.old.value.vfloat.vector.FloatAreaVector;
+import org.djunits.old.value.vfloat.vector.FloatSIVector;
 
 /**
  * Test code for package list page.
