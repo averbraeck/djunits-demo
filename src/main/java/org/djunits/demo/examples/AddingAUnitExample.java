@@ -15,10 +15,10 @@ public final class AddingAUnitExample
     }
 
     /** a new LengthUnit. */
-    public static final Length.Unit FURLONG = Length.Unit.FOOT.deriveUnit("fr", "Furlong", 660.0, UnitSystem.OTHER);
+    public static final Length.Unit FURLONG = Length.Unit.ft.deriveUnit("fr", "Furlong", 660.0, UnitSystem.OTHER);
 
     /** a new DurationUnit. */
-    public static final Duration.Unit FORTNIGHT = Duration.Unit.DAY.deriveUnit("fn", "Fortnight", 14.0, UnitSystem.OTHER);
+    public static final Duration.Unit FORTNIGHT = Duration.Unit.day.deriveUnit("fn", "Fortnight", 14.0, UnitSystem.OTHER);
 
     /** a new Speed.Unit based on the new Length.Unit and the new DurationUnit. */
     public static final Speed.Unit FURLONGS_PER_FORTNIGHT = Speed.Unit.SI.deriveUnit("fr/fn", "Furlongs per Fortnight",
