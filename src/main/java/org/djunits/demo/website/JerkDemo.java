@@ -7,7 +7,7 @@ import org.djunits.old.value.vdouble.vector.data.DoubleVectorData;
 
 /**
  * <p>
- * Copyright (c) 2013-2025 Delft University of Technology, PO Box 5, 2600 AA,
+ * Copyright (c) 2013-2026 Delft University of Technology, PO Box 5, 2600 AA,
  * Delft, the Netherlands. All rights reserved. <br>
  * BSD-style license. See
  * <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
@@ -39,7 +39,7 @@ public final class JerkDemo {
 		System.out.println();
 
 		double[] sv = new double[] { 1, 2, 3, 4, 5 };
-		JerkVector jerkVector = new JerkVector(DoubleVectorData.instantiate(sv, IdentityScale.SCALE, StorageType.DENSE),
+		JerkVector jerkVector = new JerkVector(DoubleVectorData.instantiateSi(sv, IdentityScale.SCALE, StorageType.DENSE),
 				JerkUnit.SI);
 		System.out.println("jerkVector: " + jerkVector);
 		// FIXME why can't we multiply a JerkVector by a scalar Duration and get an AccelerationVector
