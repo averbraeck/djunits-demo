@@ -1,60 +1,92 @@
 package org.djunits.demo.website;
 
-import org.djunits.old.quantity.Quantity;
-import org.djunits.old.unit.DurationUnit;
-import org.djunits.old.unit.LengthUnit;
-import org.djunits.old.unit.Unit;
-import org.djunits.old.unit.scale.IdentityScale;
-import org.djunits.old.unit.si.SIPrefixes;
-import org.djunits.old.unit.unitsystem.UnitSystem;
+import org.djunits.quantity.Length;
+import org.djunits.unit.AbstractUnit;
+import org.djunits.unit.scale.IdentityScale;
+import org.djunits.unit.scale.LinearScale;
+import org.djunits.unit.scale.Scale;
+import org.djunits.unit.si.SIUnit;
+import org.djunits.unit.system.UnitSystem;
 
 /**
- * Example from the website to test if the code on the website is correct
+ * Test for building a new JerkUnit for the Jerk quantity.
  * <p>
  * Copyright (c) 2013-2026 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved. <br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
- * </p>
  * @author Alexander Verbraeck
  * @author Peter Knoppers
  */
-public class JerkUnit extends Unit<JerkUnit>
+public class JerkUnit extends AbstractUnit<JerkUnit, Jerk>
 {
-    /** */
-    private static final long serialVersionUID = 20191003L;
-
-    /** The base quantity, with "m/s3" as the SI signature. */
-    public static final Quantity<JerkUnit> BASE = new Quantity<>("Jerk", "m/s3");
-
     /** The SI unit for jerk is m/s^3. */
     public static final JerkUnit SI =
-            new JerkUnit().build(new Unit.Builder<JerkUnit>().setQuantity(BASE).setId("m/s3").setName("meter per second cubed")
-                    .setUnitSystem(UnitSystem.SI_DERIVED).setSiPrefixes(SIPrefixes.NONE, 1.0).setScale(IdentityScale.SCALE));
+            new JerkUnit("m/s3", "meter per second cubed", IdentityScale.SCALE, UnitSystem.SI_DERIVED);
 
     /** m/s3. */
-    public static final JerkUnit M_PER_S3 = SI;
+    public static final JerkUnit m_s3 = SI;
 
     /** cm/s3. */
-    public static final JerkUnit CM_PER_S3 = SI.deriveLinear(factorLD("cm", "s"), "cm/s3", "centimeter per second cubed");
+    public static final JerkUnit cm_s3 = SI.deriveUnit("cm/s3", "centimeter per second cubed", 0.01, UnitSystem.SI_DERIVED);
 
     /** mm/s3. */
-    public static final JerkUnit MM_PER_S3 = SI.deriveLinear(factorLD("mm", "s"), "mm/s3", "millimeter per second cubed");
+    public static final JerkUnit mm_s3 = SI.deriveUnit("mm/s3", "millimeter per second cubed", 0.001, UnitSystem.SI_DERIVED);
 
     /** ft/s3. */
-    public static final JerkUnit FT_PER_S3 = SI.deriveLinear(factorLD("ft", "s"), "ft/s3", "foot per second cubed");
+    public static final JerkUnit ft_s3 =
+            SI.deriveUnit("ft/s3", "foot per second cubed", Length.Unit.CONST_FT, UnitSystem.IMPERIAL);
 
     /** in/s3. */
-    public static final JerkUnit IN_PER_S3 = SI.deriveLinear(factorLD("in", "s"), "in/s3", "inch per second cubed");
+    public static final JerkUnit in_s3 =
+            SI.deriveUnit("in/s3", "inch per second cubed", Length.Unit.CONST_IN, UnitSystem.IMPERIAL);
 
     /**
-     * Determine the conversion factor to the base jerk unit, given a length unit and a duration unit.
-     * @param length a length unit, e.g. km
-     * @param duration a duration unit, e.g. h
-     * @return the conversion factor from the provided units (e.g. km/h3) to the standard unit (m/s3)
+     * Generate a new Jerk unit.
+     * @param textualAbbreviation the textual abbreviation to use
+     * @param name the name of the unit
+     * @param scale the scale to use
+     * @param unitSystem the unit system
      */
-    private static double factorLD(final String length, final String duration)
+    public JerkUnit(final String textualAbbreviation, final String name, final Scale scale, final UnitSystem unitSystem)
     {
-        double l = LengthUnit.BASE.of(length).getScale().toStandardUnit(1.0);
-        double d = DurationUnit.BASE.of(duration).getScale().toStandardUnit(1.0);
-        return l / (d * d * d);
+        super(textualAbbreviation, name, scale, unitSystem);
     }
+
+    /**
+     * Generate a new Jerk unit.
+     * @param textualAbbreviation the textual abbreviation to use
+     * @param displayAbbreviation the display abbreviation to use
+     * @param name the name of the unit
+     * @param scale the scale to use
+     * @param unitSystem the unit system
+     */
+    public JerkUnit(final String textualAbbreviation, final String displayAbbreviation, final String name, final Scale scale, final UnitSystem unitSystem)
+    {
+        super(textualAbbreviation, displayAbbreviation, name, scale, unitSystem);
+    }
+
+    @Override
+    public SIUnit siUnit()
+    {
+        return SIUnit.of("m/s3");
+    }
+
+    @Override
+    public JerkUnit getBaseUnit()
+    {
+        return SI;
+    }
+
+    @Override
+    public Jerk ofSi(final double si)
+    {
+        return new Jerk(si, SI);
+    }
+
+    @Override
+    public JerkUnit deriveUnit(final String textualAbbreviation, final String displayAbbreviation, final String name,
+            final double scaleFactor, final UnitSystem unitSystem)
+    {
+        return new JerkUnit(textualAbbreviation, displayAbbreviation, name, new LinearScale(scaleFactor), unitSystem);
+    }
+
 }

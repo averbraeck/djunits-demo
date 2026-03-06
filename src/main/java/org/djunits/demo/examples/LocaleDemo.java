@@ -15,7 +15,6 @@ import org.djunits.old.value.vdouble.scalar.Speed;
  * <p>
  * Copyright (c) 2015-2026 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved. <br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
- * </p>
  * @version $Revision: 672 $, $LastChangedDate: 2019-10-18 14:32:01 +0200 (Fri, 18 Oct 2019) $, by $Author: averbraeck $,
  *          initial version 3 sep. 2015 <br>
  * @author Alexander Verbraeck

@@ -84,7 +84,6 @@ import org.djunits.unit.si.SIUnit;
  * </ul>
  * <p>
  * Usage: run {@link #main(String[])} or call {@link #run()} and {@link #printReport(List)} in your test harness.
- * </p>
  */
 public final class CheckOperations
 {
@@ -273,8 +272,7 @@ public final class CheckOperations
      * <p>
      * If neither {@code ONE} nor {@code ofSi(double)} is available for a class, the class is omitted from the map and a
      * diagnostic is printed to standard error.
-     * </p>
-     * @return a map from quantity class to its canonical instance.
+         * @return a map from quantity class to its canonical instance.
      */
     private static Map<Class<?>, Quantity<?, ?>> buildOnes()
     {
@@ -397,8 +395,7 @@ public final class CheckOperations
      * Prints a report with discovered calculations and dimensional check results.
      * <p>
      * The report includes:
-     * </p>
-     * <ul>
+         * <ul>
      * <li>A list of signature lines for all discovered calculations.</li>
      * <li>Per-calculation dimensional validation outcome lines.</li>
      * <li>A summary with totals for discovered, invocation failures, passes, and failures.</li>

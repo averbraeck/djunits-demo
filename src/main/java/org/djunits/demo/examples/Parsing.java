@@ -9,7 +9,6 @@ import org.djunits.old.value.vfloat.scalar.FloatLength;
  * <p>
  * Copyright (c) 2003-2018 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved.<br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
- * </p>
  * @author Alexander Verbraeck
  */
 public final class Parsing

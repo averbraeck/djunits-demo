@@ -1,5 +1,6 @@
 package org.djunits.demo.examples;
 
+import org.djunits.quantity.Area;
 import org.djunits.quantity.Duration;
 import org.djunits.quantity.Frequency;
 import org.djunits.quantity.Length;
@@ -9,13 +10,15 @@ import org.djunits.quantity.Time;
 import org.djunits.quantity.Time.Reference;
 import org.djunits.vecmat.d2.Matrix2x2;
 import org.djunits.vecmat.d2.Vector2;
+import org.djunits.vecmat.d3.Matrix3x3;
+import org.djunits.vecmat.dn.VectorN;
+import org.djunits.vecmat.storage.DenseDoubleData;
 
 /**
- * VecMat.java.<br>
- * <br>
+ * VecMat.java.<p>
  * Copyright (c) 2025-2026 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved. See
- * for project information <a href="https://djutils.org" target="_blank">https://djutils.org</a>. The DJUTILS project is
- * distributed under a <a href="https://djutils.org/docs/license.html" target="_blank">three-clause BSD-style license</a>.
+ * for project information <a href="https://djunits.org" target="_blank">https://djunits.org</a>. The DJUNITS project is
+ * distributed under a <a href="https://djunits.org/docs/license.html" target="_blank">three-clause BSD-style license</a>.
  * @author Alexander Verbraeck
  */
 public class VecMat
@@ -100,5 +103,12 @@ public class VecMat
         }
         System.out.println("\ntrace: " + mat.trace());
         System.out.println("\nadjugate:\n" + mat.adjugate());
+        
+        var mat3 = Matrix3x3.of(new double[][] {{1,2,3}, {4,5,6}, {7,8,9}}, Area.Unit.m2);
+        System.out.println(mat3);
+        
+        double[] sv = new double[] {10, 20, 30, 40, 50};
+        var v1 = new VectorN.Col<Speed, Speed.Unit>(new DenseDoubleData(sv, 5, 1), Speed.Unit.km_h);
+        System.out.println("speed vector 1: " + v1);
     }
 }
