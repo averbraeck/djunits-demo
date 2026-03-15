@@ -1,9 +1,8 @@
 package org.djunits.demo.website;
 
+import org.djunits.quantity.Acceleration;
 import org.djunits.quantity.Duration;
-import org.djunits.vecmat.dn.MatrixNxN;
-import org.djunits.vecmat.dn.VectorN;
-import org.djunits.vecmat.storage.DenseDoubleData;
+import org.djunits.vecmat.d2.Matrix2x2;
 
 /**
  * <p>
@@ -25,36 +24,23 @@ public final class JerkDemo
      */
     public static void main(final String[] args)
     {
-        Jerk jerk1 = new Jerk(1.2, JerkUnit.SI);
-        System.out.println("jerk1 = Jerk(1.2, JerkUnit.SI)    : " + jerk1);
+        Jerk jerk1 = new Jerk(1.2, Jerk.Unit.SI);
+        System.out.println("jerk1 = Jerk(1.2, Jerk.Unit.SI)    : " + jerk1);
         Jerk jerk2 = jerk1.scaleBy(2.0);
-        System.out.println("jerk2 = jerk1.multiplyBy(2.0)     : " + jerk2);
-        Jerk jerk3 = new Jerk(4.0, JerkUnit.in_s3);
-        System.out.println("jerk3 = Jerk(4.0, JerkUnit.in_s3  : " + jerk3);
-        System.out.println("jerk3 expressed in JerkUnit.SI    : " + jerk3.toString(JerkUnit.SI));
-        System.out.println("jerk3 expressed in JerkUnit.ft_s3 : " + jerk3.toString(JerkUnit.ft_s3));
+        System.out.println("jerk2 = jerk1.scaleBy(2.0)         : " + jerk2);
+        Jerk jerk3 = new Jerk(4.0, Jerk.Unit.in_s3);
+        System.out.println("jerk3 = Jerk(4.0, Jerk.Unit.in_s3  : " + jerk3);
+        System.out.println("jerk3 expressed in Jerk.Unit.SI    : " + jerk3.toString(Jerk.Unit.SI));
+        System.out.println("jerk3 expressed in Jerk.Unit.ft_s3 : " + jerk3.toString(Jerk.Unit.ft_s3));
 
-        System.out.println();
+        double[][] jmd = new double[][] {{1, 2}, {3, 4}};
+        Matrix2x2<Jerk, Jerk.Unit> jerkMatrix2 = Matrix2x2.of(jmd, Jerk.Unit.in_s3);
+        System.out.println("\nJerk matrix:\n" + jerkMatrix2);
 
-        double[] sv = new double[] {1, 2, 3, 4, 5};
-        var jerkVector = new VectorN.Col<Jerk, JerkUnit>(new DenseDoubleData(sv, 5, 1), JerkUnit.SI);
-        System.out.println("jerkVector: " + jerkVector);
-
-        // multiply a JerkVector by a scalar Duration and get an Vector<Acceleration, Acceleration.Unit>
+        // multiply the JerkMatrix by a scalar Duration and get an Matrix2x2<Acceleration, Acceleration.Unit>
         Duration d = Duration.of(3.0, "s");
-        // VectorN.Col<Acceleration, Acceleration.Unit> vAcc = jerkVector.multiplyElements(d).as(Acceleration.class);
-
-        // fill a JerkMatrix
-        double[][] data = new double[1000][1000];
-        for (int i = 0; i < 1000; i++)
-        {
-            for (int j = 0; j < 1000; j++)
-            {
-                data[i][j] = 9 * i + 2 * j * 0.364;
-            }
-        }
-        MatrixNxN<Jerk, JerkUnit> mat = new MatrixNxN<>(new DenseDoubleData(data), JerkUnit.in_s3);
-        System.out.println("mean matrix value: " + mat.mean());
+        Matrix2x2<Acceleration, Acceleration.Unit> mAcc = jerkMatrix2.multiplyElements(d).as(Acceleration.Unit.ft_s2);
+        System.out.println("Acceleration matrix:\n" + mAcc);
     }
 
 }

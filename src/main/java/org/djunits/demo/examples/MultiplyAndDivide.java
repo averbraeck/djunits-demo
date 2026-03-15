@@ -46,9 +46,9 @@ public final class MultiplyAndDivide implements UNITS {
         Length distance = speed.times(duration);
         System.out.println("distance is " + distance); // prints 2.500e+04m
         Length finish = new Length(100, KILOMETER);
-        Duration timeToFinish = finish.divide(speed);
+        Duration timeToFinish = finish.divideScalar(speed);
         System.out.println("at speed " + speed + " it will take " + timeToFinish + " to travel " + finish);
-        Speed requiredSpeed = finish.divide(duration);
+        Speed requiredSpeed = finish.divideScalar(duration);
         System.out.println("speed required to reach finish at " + finish + " in " + duration + " is "
                 + requiredSpeed.toString(KM_PER_HOUR));
         Speed speed1 = new Speed(1.2, SpeedUnit.SI);

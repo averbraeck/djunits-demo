@@ -52,7 +52,7 @@ public final class ExamplesSpeedConversions
     {
         Speed speed = new Speed(12, SpeedUnit.KM_PER_HOUR);
         Length length = new Length(4, LengthUnit.MILE);
-        Duration howLongOK = length.divide(speed); // Good
+        Duration howLongOK = length.divideScalar(speed); // Good
         System.out.println(howLongOK);
         // Duration howLongWrong = speed.divide(length); // Does not compile; result would be a frequency
         // Speed other = speed.minus(length); // Does not compile; subtracting a length from a speed make no sense

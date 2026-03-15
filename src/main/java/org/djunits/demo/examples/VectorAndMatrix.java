@@ -19,7 +19,7 @@ import org.djunits.quantity.Length;
 import org.djunits.quantity.Speed;
 import org.djunits.unit.scale.IdentityScale;
 import org.djunits.vecmat.dn.VectorN;
-import org.djunits.vecmat.storage.DenseDoubleData;
+import org.djunits.vecmat.storage.DenseDoubleDataSi;
 
 /**
  * <p>
@@ -48,7 +48,7 @@ public final class VectorAndMatrix {
         System.out.println(dva);
 
         double[] doubleValues2 = new double[] { 10, 20.0, 60, 120.0, 300.0 };
-        DenseDoubleData ddd2 = new DenseDoubleData(doubleValues2, 5, 1);
+        DenseDoubleDataSi ddd2 = new DenseDoubleDataSi(doubleValues2, 5, 1);
         VectorN.Col<Duration, Duration.Unit> dv1 = new VectorN.Col<>(ddd2, Duration.Unit.s);
         Speed speed = Speed.of(10.0, "km_h");
         VectorN.Col<Length, Length.Unit> lv1 = dv1.multiplyElements(speed).as(Length.Unit.m);

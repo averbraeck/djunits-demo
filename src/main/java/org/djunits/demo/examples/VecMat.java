@@ -12,7 +12,7 @@ import org.djunits.vecmat.d2.Matrix2x2;
 import org.djunits.vecmat.d2.Vector2;
 import org.djunits.vecmat.d3.Matrix3x3;
 import org.djunits.vecmat.dn.VectorN;
-import org.djunits.vecmat.storage.DenseDoubleData;
+import org.djunits.vecmat.storage.DenseDoubleDataSi;
 
 /**
  * VecMat.java.<p>
@@ -108,7 +108,15 @@ public class VecMat
         System.out.println(mat3);
         
         double[] sv = new double[] {10, 20, 30, 40, 50};
-        var v1 = new VectorN.Col<Speed, Speed.Unit>(new DenseDoubleData(sv, 5, 1), Speed.Unit.km_h);
+        var v1 = VectorN.Col.ofSi(new DenseDoubleDataSi(sv, 5, 1), Speed.Unit.km_h);
         System.out.println("speed vector 1: " + v1);
+        
+        double[] doubleValues2 = new double[] { 10, 20.0, 60, 120.0, 300.0 };
+        DenseDoubleDataSi ddd2 = new DenseDoubleDataSi(doubleValues2, 5, 1);
+        VectorN.Col<Duration, Duration.Unit> dv1 = VectorN.Col.ofSi(ddd2, Duration.Unit.s);
+        Speed speed = Speed.of(10.0, "km/h");
+        VectorN.Col<Length, Length.Unit> lv1 = dv1.multiplyElements(speed).as(Length.Unit.m);
+        System.out.println(dv1);
+        System.out.println(lv1);
     }
 }

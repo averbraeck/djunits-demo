@@ -169,8 +169,27 @@ public final class Test
      */
     public static void main(final String[] args)
     {
-        Locale.setDefault(Locale.forLanguageTag("ko"));
-        new Test();
+        // Locale.setDefault(Locale.forLanguageTag("de"));
+        Locale.setDefault(Locale.US);
+        //new Test();
+        
+        System.out.println("\nLOCALIZATION US");
+        Locale.setDefault(Locale.US);
+        var speed = Speed.of(50.0, "km/h");
+        System.out.println("Absorbed dose name: " + AbsorbedDose.ONE.getName());
+        System.out.println("50 km/h = " + speed);
+        System.out.println("Acceleration: " + Units.localizedQuantityName(Acceleration.Unit.class));
+
+        System.out.println("\nLOCALIZATION NL");
+        Locale.setDefault(Locale.forLanguageTag("nl"));
+        System.out.println("Absorbed dose name: " + AbsorbedDose.ONE.getName());
+        System.out.println("50 km/h = " + speed);
+        System.out.println("Acceleration: " + Units.localizedQuantityName(Acceleration.Unit.class));
+
+        var d3du = Duration.valueOf("3 dag");
+        d3du.setDisplayUnit("u");
+        System.out.println("3 dagen in uren: " + d3du);
+
     }
 
     /**

@@ -86,11 +86,11 @@ public class DimensionlessExample
         // Dimensionless as a result of division or multiplication
         Dimensionless m1 = Frequency.of(10.0, "Hz").times(Duration.valueOf("1.0 min"));
         System.out.println("|" + m1 + "|");
-        Dimensionless t2 = Torque.of(1.33, "N.m").divide(Torque.ONE);
+        Dimensionless t2 = Torque.of(1.33, "N.m").divideScalar(Torque.ONE);
         System.out.println("|" + t2 + "|");
 
         // SIScalar values that are Dimensionless
-        SIScalar s1 = Torque.of(1.33, "N.m").divide(Energy.valueOf("2.1 J"));
+        SIScalar s1 = Torque.of(1.33, "N.m").divideScalar(Energy.valueOf("2.1 J"));
         System.out.println("|" + s1 + "|");
         SIScalar s2 = SIScalar.of(1.2, "");
         System.out.println("|" + s2 + "|");
@@ -125,11 +125,11 @@ public class DimensionlessExample
         // FloatDimensionless as a result of division or multiplication
         FloatDimensionless m1 = FloatFrequency.of(10.0f, "Hz").times(FloatDuration.valueOf("1.0 min"));
         System.out.println("|" + m1 + "|");
-        FloatDimensionless t2 = FloatTorque.of(1.33f, "N.m").divide(FloatTorque.ONE);
+        FloatDimensionless t2 = FloatTorque.of(1.33f, "N.m").divideScalar(FloatTorque.ONE);
         System.out.println("|" + t2 + "|");
 
         // FloatSIScalar values that are FloatDimensionless
-        FloatSIScalar s1 = FloatTorque.of(1.33f, "N.m").divide(FloatEnergy.valueOf("2.1 J"));
+        FloatSIScalar s1 = FloatTorque.of(1.33f, "N.m").divideScalar(FloatEnergy.valueOf("2.1 J"));
         System.out.println("|" + s1 + "|");
         FloatSIScalar s2 = FloatSIScalar.of(1.2f, "");
         System.out.println("|" + s2 + "|");
@@ -162,7 +162,7 @@ public class DimensionlessExample
         System.out.println("|" + si2 + "|");
         TorqueVector tv = new TorqueVector(da);
         EnergyVector ev = new EnergyVector(da).times(2.0);
-        SIVector si3 = tv.divide(ev);
+        SIVector si3 = tv.divideScalar(ev);
         System.out.println("|" + tv + "| / |" + ev + "| = |" + si3 + "|");
     }
 
@@ -191,7 +191,7 @@ public class DimensionlessExample
         System.out.println("|" + si2 + "|");
         FloatTorqueVector tv = new FloatTorqueVector(da);
         FloatEnergyVector ev = new FloatEnergyVector(da).times(2.0f);
-        FloatSIVector si3 = tv.divide(ev);
+        FloatSIVector si3 = tv.divideScalar(ev);
         System.out.println("|" + tv + "| / |" + ev + "| = |" + si3 + "|");
     }
 
