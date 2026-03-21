@@ -10,7 +10,7 @@ import org.djunits.quantity.Speed;
 /**
  * SpeedExample.java. <br>
  * <br>
- * Copyright (c) 2024-2024 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved. See
+ * Copyright (c) 2024-2026 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved. See
  * for project information <a href="https://djutils.org" target="_blank"> https://djutils.org</a>. The DJUTILS project is
  * distributed under a three-clause BSD-style license, which can be found at
  * <a href="https://djutils.org/docs/license.html" target="_blank"> https://djutils.org/docs/license.html</a>. <br>
@@ -30,7 +30,7 @@ public class SpeedExample
         // Does not compile; result would be a frequency:
         // Duration howLongWrong = speed.divide(length);
 
-        // Does not compile; subtracting a length from a speed make no sense:
+        // Does not compile; subtracting a length from a speed makes no sense:
         // Speed other = speed.subtract(length);
 
         // Throws a UnitRuntimeException:

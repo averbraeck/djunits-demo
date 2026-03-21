@@ -171,7 +171,7 @@ public final class Test
     {
         // Locale.setDefault(Locale.forLanguageTag("de"));
         Locale.setDefault(Locale.US);
-        //new Test();
+        new Test();
         
         System.out.println("\nLOCALIZATION US");
         Locale.setDefault(Locale.US);
