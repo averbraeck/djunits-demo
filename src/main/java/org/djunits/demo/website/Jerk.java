@@ -20,7 +20,7 @@ import org.djunits.unit.system.UnitSystem;
  * @author Alexander Verbraeck
  * @author Peter Knoppers
  */
-public class Jerk extends Quantity<Jerk, Jerk.Unit>
+public class Jerk extends Quantity<Jerk>
 {
     /** */
     private static final long serialVersionUID = 1L;
@@ -40,7 +40,7 @@ public class Jerk extends Quantity<Jerk, Jerk.Unit>
     {
         return new Jerk(siValue, Jerk.Unit.SI);
     }
-    
+
     /**
      * Multiply by duration to get an acceleration.
      * @param v the duration
@@ -60,11 +60,12 @@ public class Jerk extends Quantity<Jerk, Jerk.Unit>
     {
         return Frequency.ofSi(this.si() / v.si());
     }
-    
+
     /**
      * Test for building a new Jerk.Unit for the Jerk quantity.
      * <p>
-     * Copyright (c) 2013-2026 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved. <br>
+     * Copyright (c) 2013-2026 Delft University of Technology, PO Box 5, 2600 AA, Delft, the Netherlands. All rights reserved.
+     * <br>
      * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
      * @author Alexander Verbraeck
      * @author Peter Knoppers
@@ -79,10 +80,12 @@ public class Jerk extends Quantity<Jerk, Jerk.Unit>
         public static final Jerk.Unit m_s3 = SI;
 
         /** cm/s3. */
-        public static final Jerk.Unit cm_s3 = SI.deriveUnit("cm/s3", "centimeter per second cubed", 0.01, UnitSystem.SI_DERIVED);
+        public static final Jerk.Unit cm_s3 =
+                SI.deriveUnit("cm/s3", "centimeter per second cubed", 0.01, UnitSystem.SI_DERIVED);
 
         /** mm/s3. */
-        public static final Jerk.Unit mm_s3 = SI.deriveUnit("mm/s3", "millimeter per second cubed", 0.001, UnitSystem.SI_DERIVED);
+        public static final Jerk.Unit mm_s3 =
+                SI.deriveUnit("mm/s3", "millimeter per second cubed", 0.001, UnitSystem.SI_DERIVED);
 
         /** ft/s3. */
         public static final Jerk.Unit ft_s3 =
@@ -112,7 +115,8 @@ public class Jerk extends Quantity<Jerk, Jerk.Unit>
          * @param scale the scale to use
          * @param unitSystem the unit system
          */
-        public Unit(final String textualAbbreviation, final String displayAbbreviation, final String name, final Scale scale, final UnitSystem unitSystem)
+        public Unit(final String textualAbbreviation, final String displayAbbreviation, final String name, final Scale scale,
+                final UnitSystem unitSystem)
         {
             super(textualAbbreviation, displayAbbreviation, name, scale, unitSystem);
         }

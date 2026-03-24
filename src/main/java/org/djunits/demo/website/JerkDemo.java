@@ -34,12 +34,12 @@ public final class JerkDemo
         System.out.println("jerk3 expressed in Jerk.Unit.ft_s3 : " + jerk3.toString(Jerk.Unit.ft_s3));
 
         double[][] jmd = new double[][] {{1, 2}, {3, 4}};
-        Matrix2x2<Jerk, Jerk.Unit> jerkMatrix2 = Matrix2x2.of(jmd, Jerk.Unit.in_s3);
+        Matrix2x2<Jerk> jerkMatrix2 = Matrix2x2.of(jmd, Jerk.Unit.in_s3);
         System.out.println("\nJerk matrix:\n" + jerkMatrix2);
 
         // multiply the JerkMatrix by a scalar Duration and get an Matrix2x2<Acceleration, Acceleration.Unit>
         Duration d = Duration.of(3.0, "s");
-        Matrix2x2<Acceleration, Acceleration.Unit> mAcc = jerkMatrix2.multiplyElements(d).as(Acceleration.Unit.ft_s2);
+        Matrix2x2<Acceleration> mAcc = jerkMatrix2.multiplyEntries(d).as(Acceleration.Unit.ft_s2);
         System.out.println("Acceleration matrix:\n" + mAcc);
     }
 
