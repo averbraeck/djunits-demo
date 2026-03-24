@@ -75,7 +75,7 @@ import org.djunits.unit.si.SIUnit;
  * <p>
  * <strong>Assumptions:</strong>
  * <ul>
- * <li>All quantity classes extend {@link Quantity} with type parameters {@code Quantity<?, ?>}.</li>
+ * <li>All quantity classes extend {@link Quantity} with type parameters {@code Quantity<?>}.</li>
  * <li>Each quantity class exposes a public static constant {@code ONE} or a static factory method {@code ofSi(double)}.</li>
  * <li>{@link Quantity#getDisplayUnit()} returns a {@link UnitInterface} whose {@link UnitInterface#siUnit()} returns an
  * {@link SIUnit}.</li>
@@ -218,7 +218,7 @@ public final class CheckOperations
      */
     public static List<Calc> run()
     {
-        Map<Class<?>, Quantity<?, ?>> ones = buildOnes();
+        Map<Class<?>, Quantity<?>> ones = buildOnes();
 
         List<Calc> out = new ArrayList<>();
         for (Class<?> lhsClass : QUANTITY_CLASSES)
@@ -274,18 +274,18 @@ public final class CheckOperations
      * diagnostic is printed to standard error.
          * @return a map from quantity class to its canonical instance.
      */
-    private static Map<Class<?>, Quantity<?, ?>> buildOnes()
+    private static Map<Class<?>, Quantity<?>> buildOnes()
     {
-        Map<Class<?>, Quantity<?, ?>> map = new HashMap<>();
+        Map<Class<?>, Quantity<?>> map = new HashMap<>();
         for (Class<?> q : QUANTITY_CLASSES)
         {
-            Quantity<?, ?> inst = null;
+            Quantity<?> inst = null;
             // Try public static field ONE first.
             try
             {
                 Field f = q.getField("ONE");
                 Object v = f.get(null);
-                inst = (Quantity<?, ?>) v;
+                inst = (Quantity<?>) v;
             }
             catch (NoSuchFieldException | IllegalAccessException ignored)
             {
@@ -294,7 +294,7 @@ public final class CheckOperations
                 {
                     Method ofSi = q.getMethod("ofSi", double.class);
                     Object v = ofSi.invoke(null, 1.0);
-                    inst = (Quantity<?, ?>) v;
+                    inst = (Quantity<?>) v;
                 }
                 catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e)
                 {
@@ -320,11 +320,11 @@ public final class CheckOperations
      * @return a calculation record including invocation and dimensional validation results.
      */
     private static Calc performCheck(final Class<?> lhsClass, final Method opMethod, final Class<?> rhsClass,
-            final Class<?> retClass, final String opSymbol, final Map<Class<?>, Quantity<?, ?>> ones)
+            final Class<?> retClass, final String opSymbol, final Map<Class<?>, Quantity<?>> ones)
     {
 
-        Quantity<?, ?> lhs = ones.get(lhsClass);
-        Quantity<?, ?> rhs = ones.get(rhsClass);
+        Quantity<?> lhs = ones.get(lhsClass);
+        Quantity<?> rhs = ones.get(rhsClass);
 
         if (lhs == null || rhs == null)
         {
@@ -336,7 +336,7 @@ public final class CheckOperations
         try
         {
             Object resultObj = opMethod.invoke(lhs, rhs);
-            Quantity<?, ?> result = (Quantity<?, ?>) resultObj;
+            Quantity<?> result = (Quantity<?>) resultObj;
 
             // Dimensional analysis via shared APIs (no reflection helpers).
             UnitInterface<?, ?> lhsUnit = lhs.getDisplayUnit();

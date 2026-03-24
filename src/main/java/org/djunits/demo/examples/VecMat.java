@@ -68,8 +68,8 @@ public class VecMat
         as2();
         time();
 
-        Vector2.Col<Frequency, Frequency.Unit> f =
-                Vector2.Col.of(10.0, 5.0, Duration.Unit.ms).invertElements().as(Frequency.Unit.kHz);
+        Vector2.Col<Frequency> f =
+                Vector2.Col.of(10.0, 5.0, Duration.Unit.ms).invertEntries().as(Frequency.Unit.kHz);
         System.out.println(f.x() + " type=" + f.x().getClass().getSimpleName());
 
         var v2 = Vector2.Col.of(10, 20, Length.Unit.m);
@@ -113,9 +113,9 @@ public class VecMat
         
         double[] doubleValues2 = new double[] { 10, 20.0, 60, 120.0, 300.0 };
         DenseDoubleDataSi ddd2 = new DenseDoubleDataSi(doubleValues2, 5, 1);
-        VectorN.Col<Duration, Duration.Unit> dv1 = VectorN.Col.ofSi(ddd2, Duration.Unit.s);
+        VectorN.Col<Duration> dv1 = VectorN.Col.ofSi(ddd2, Duration.Unit.s);
         Speed speed = Speed.of(10.0, "km/h");
-        VectorN.Col<Length, Length.Unit> lv1 = dv1.multiplyElements(speed).as(Length.Unit.m);
+        VectorN.Col<Length> lv1 = dv1.multiplyEntries(speed).as(Length.Unit.m);
         System.out.println(dv1);
         System.out.println(lv1);
     }

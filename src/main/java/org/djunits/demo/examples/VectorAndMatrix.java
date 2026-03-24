@@ -49,9 +49,9 @@ public final class VectorAndMatrix {
 
         double[] doubleValues2 = new double[] { 10, 20.0, 60, 120.0, 300.0 };
         DenseDoubleDataSi ddd2 = new DenseDoubleDataSi(doubleValues2, 5, 1);
-        VectorN.Col<Duration, Duration.Unit> dv1 = new VectorN.Col<>(ddd2, Duration.Unit.s);
+        VectorN.Col<Duration> dv1 = new VectorN.Col<>(ddd2, Duration.Unit.s);
         Speed speed = Speed.of(10.0, "km_h");
-        VectorN.Col<Length, Length.Unit> lv1 = dv1.multiplyElements(speed).as(Length.Unit.m);
+        VectorN.Col<Length> lv1 = dv1.multiplyEntries(speed).as(Length.Unit.m);
         System.out.println(dv1);
         System.out.println(lv1);
 
