@@ -27,20 +27,30 @@ public class Jerk extends Quantity<Jerk>
 
     /**
      * Construct Jerk scalar.
-     * @param value the double value
+     * @param valueInUnit the double value
      * @param unit unit for the double value
      */
-    public Jerk(final double value, final Jerk.Unit unit)
+    public Jerk(final double valueInUnit, final Jerk.Unit unit)
     {
-        super(value, unit);
+        super(valueInUnit, unit);
     }
 
     @Override
-    public Jerk instantiate(final double siValue)
+    public Jerk instantiateSi(final double siValue)
     {
         return new Jerk(siValue, Jerk.Unit.SI);
     }
 
+    /**
+     * Instantiate a Jerk quantity instance from an SI value.
+     * @param valueSi the value expressed in m/s3
+     * @return a Jerk instance based on the SI value
+     */
+    public static Jerk ofSi(final double valueSi)
+    {
+        return new Jerk(valueSi, Jerk.Unit.SI);
+    }
+    
     /**
      * Multiply by duration to get an acceleration.
      * @param v the duration
