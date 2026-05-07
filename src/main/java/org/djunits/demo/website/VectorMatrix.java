@@ -1,4 +1,4 @@
-package org.djunits.demo.examples;
+package org.djunits.demo.website;
 
 import org.djunits.quantity.Area;
 import org.djunits.quantity.Duration;
@@ -9,7 +9,7 @@ import org.djunits.vecmat.dn.VectorN;
 import org.djunits.vecmat.dnxm.MatrixNxM;
 
 /** */
-public class VecMat2
+public class VectorMatrix
 {
     /**
      * @param args not used
