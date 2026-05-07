@@ -1,11 +1,9 @@
 package org.djunits.demo.examples;
 
-import org.djunits.old.unit.LengthUnit;
-import org.djunits.old.value.vdouble.scalar.Length;
-import org.djunits.old.value.vfloat.scalar.FloatLength;
+import org.djunits.quantity.Length;
 
 /**
- * Parsing.java. <br>
+ * Parsing values that have been formatted in different ways. <br>
  * <p>
  * Copyright (c) 2003-2026 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved.<br>
  * BSD-style license. See <a href="https://djunits.org/docs/license.html">DJUNITS License</a>.
@@ -24,7 +22,7 @@ public final class Parsing
      */
     public static void main(final String[] args)
     {
-        Length l = new Length(100.0, LengthUnit.KILOMETER);
+        Length l = new Length(100.0, Length.Unit.km);
         System.out.println(l.toString());
         System.out.println(Length.valueOf(l.toString()));
 
@@ -32,22 +30,8 @@ public final class Parsing
                 "18.37823472346234623  mi"};
         for (String s : sa)
         {
-            System.out.println("\n" + Length.valueOf(s));
-            System.out.println(Length.valueOf(s).toString());
+            System.out.println(s + " -> " + Length.valueOf(s));
         }
-
-        System.out.println("\n==========================================================\n");
-
-        FloatLength fl = new FloatLength(100.0f, LengthUnit.KILOMETER);
-        System.out.println(fl.toString());
-        System.out.println(FloatLength.valueOf(fl.toString()));
-
-        for (String s : sa)
-        {
-            System.out.println("\n" + FloatLength.valueOf(s));
-            System.out.println(FloatLength.valueOf(s).toString());
-        }
-
     }
 
 }
