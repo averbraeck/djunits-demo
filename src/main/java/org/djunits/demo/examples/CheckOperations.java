@@ -59,7 +59,7 @@ import org.djunits.quantity.Torque;
 import org.djunits.quantity.Volume;
 import org.djunits.quantity.VolumetricObjectDensity;
 import org.djunits.quantity.def.Quantity;
-import org.djunits.unit.UnitInterface;
+import org.djunits.unit.Unit;
 import org.djunits.unit.si.SIUnit;
 
 /**
@@ -77,7 +77,7 @@ import org.djunits.unit.si.SIUnit;
  * <ul>
  * <li>All quantity classes extend {@link Quantity} with type parameters {@code Quantity<?>}.</li>
  * <li>Each quantity class exposes a public static constant {@code ONE} or a static factory method {@code ofSi(double)}.</li>
- * <li>{@link Quantity#getDisplayUnit()} returns a {@link UnitInterface} whose {@link UnitInterface#siUnit()} returns an
+ * <li>{@link Quantity#getDisplayUnit()} returns a {@link Unit} whose {@link Unit#siUnit()} returns an
  * {@link SIUnit}.</li>
  * <li>{@link SIUnit} provides {@link SIUnit#siDimensions()} (double array in order rad, sr, kg, m, s, A, K, mol, cd),
  * {@link SIUnit#plus(SIUnit)}, {@link SIUnit#minus(SIUnit)}, and a meaningful {@link SIUnit#toString()}.</li>
@@ -187,9 +187,9 @@ public final class CheckOperations
         {
             if (!this.invoked)
             {
-                return "   ❌ INVOCATION FAILED: " + this.note;
+                return "   INVOCATION FAILED: " + this.note;
             }
-            return (this.dimOk ? "   ✅ DIM OK " : "   ❌ DIM MISMATCH ") + "(expected " + this.expectedUnitStr + ", got "
+            return (this.dimOk ? "   DIM OK " : "   DIM MISMATCH ") + "(expected " + this.expectedUnitStr + ", got "
                     + this.gotUnitStr + ")";
         }
     }
@@ -339,9 +339,9 @@ public final class CheckOperations
             Quantity<?> result = (Quantity<?>) resultObj;
 
             // Dimensional analysis via shared APIs (no reflection helpers).
-            UnitInterface<?, ?> lhsUnit = lhs.getDisplayUnit();
-            UnitInterface<?, ?> rhsUnit = rhs.getDisplayUnit();
-            UnitInterface<?, ?> resUnit = result.getDisplayUnit();
+            Unit<?, ?> lhsUnit = lhs.getDisplayUnit();
+            Unit<?, ?> rhsUnit = rhs.getDisplayUnit();
+            Unit<?, ?> resUnit = result.getDisplayUnit();
 
             SIUnit lhsSI = lhsUnit.siUnit();
             SIUnit rhsSI = rhsUnit.siUnit();
