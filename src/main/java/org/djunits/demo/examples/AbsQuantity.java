@@ -9,16 +9,17 @@ import org.djunits.quantity.Temperature;
 import org.djunits.quantity.Time;
 
 /**
- * TestAbsolute.java.<p>
+ * Show how absolute quantities and reference points work.
+ * <p>
  * Copyright (c) 2025-2026 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved. See
  * for project information <a href="https://djunits.org" target="_blank">https://djunits.org</a>. The DJUNITS project is
  * distributed under a <a href="https://djunits.org/docs/license.html" target="_blank">three-clause BSD-style license</a>.
  * @author Alexander Verbraeck
  */
-public final class TestAbsolute
+public final class AbsQuantity
 {
     /** */
-    private TestAbsolute()
+    private AbsQuantity()
     {
     }
 
@@ -34,13 +35,13 @@ public final class TestAbsolute
         var pRef100 = new Position.Reference("REF100", "ref100", Length.of(100.0, "m"), pRef);
         var p2 = new Position(Length.of(10.0, "m"), pRef100);
         System.out.println(p2 + " = " + p2.relativeTo(pRef));
-        System.out.println(p1.toDisplayString(Length.Unit.A));
+        System.out.println(p1.format(Length.Unit.A));
     }
 
     /** */
     public static void testDirection()
     {
-        System.out.println("DIRECTION");
+        System.out.println("\nDIRECTION");
         System.out.println("=========");
 
         var d1 = new Direction(Angle.of(30.0, "deg"), Direction.Reference.NORTH);
@@ -105,16 +106,16 @@ public final class TestAbsolute
 
         var t1 = new Temperature(15.0, "degC");
         System.out.println(t1 + " = " + t1.relativeTo(Temperature.Reference.KELVIN));
-        System.out.println(t1 + " = " + t1.relativeTo(Temperature.Reference.KELVIN).toDisplayString(Temperature.Unit.K));
+        System.out.println(t1 + " = " + t1.relativeTo(Temperature.Reference.KELVIN).format(Temperature.Unit.K));
         System.out.println();
 
         var t2 = new Temperature(80.0, Temperature.Unit.degF, Temperature.Reference.FAHRENHEIT);
         System.out.println(t2 + " = " + t2.relativeTo(Temperature.Reference.KELVIN));
-        System.out.println(t2 + " = " + t2.relativeTo(Temperature.Reference.CELSIUS).toDisplayString(Temperature.Unit.degC));
+        System.out.println(t2 + " = " + t2.relativeTo(Temperature.Reference.CELSIUS).format(Temperature.Unit.degC));
         System.out.println();
 
         var t3 = new Temperature(32.0, "degF", Temperature.Reference.FAHRENHEIT);
-        System.out.println(t3 + " = " + t3.relativeTo(Temperature.Reference.CELSIUS).toDisplayString(Temperature.Unit.degC));
+        System.out.println(t3 + " = " + t3.relativeTo(Temperature.Reference.CELSIUS).format(Temperature.Unit.degC));
         System.out.println();
     }
 
