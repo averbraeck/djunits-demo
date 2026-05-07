@@ -15,13 +15,14 @@ import org.djunits.vecmat.dn.VectorN;
 import org.djunits.vecmat.storage.DenseDoubleDataSi;
 
 /**
- * VecMat.java.<p>
+ * VecMatDemo shows some examples of the use of vector and matrix functions.
+ * <p>
  * Copyright (c) 2025-2026 Delft University of Technology, Jaffalaan 5, 2628 BX Delft, the Netherlands. All rights reserved. See
  * for project information <a href="https://djunits.org" target="_blank">https://djunits.org</a>. The DJUNITS project is
  * distributed under a <a href="https://djunits.org/docs/license.html" target="_blank">three-clause BSD-style license</a>.
  * @author Alexander Verbraeck
  */
-public class VecMat
+public class VecMatDemo
 {
     /** */
     private static void as1()
@@ -68,8 +69,7 @@ public class VecMat
         as2();
         time();
 
-        Vector2.Col<Frequency> f =
-                Vector2.Col.of(10.0, 5.0, Duration.Unit.ms).invertEntries().as(Frequency.Unit.kHz);
+        Vector2.Col<Frequency> f = Vector2.Col.of(10.0, 5.0, Duration.Unit.ms).invertEntries().as(Frequency.Unit.kHz);
         System.out.println(f.x() + " type=" + f.x().getClass().getSimpleName());
 
         var v2 = Vector2.Col.of(10, 20, Length.Unit.m);
@@ -103,15 +103,15 @@ public class VecMat
         }
         System.out.println("\ntrace: " + mat.trace());
         System.out.println("\nadjugate:\n" + mat.adjugate());
-        
-        var mat3 = Matrix3x3.of(new double[][] {{1,2,3}, {4,5,6}, {7,8,9}}, Area.Unit.m2);
+
+        var mat3 = Matrix3x3.of(new double[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, Area.Unit.m2);
         System.out.println(mat3);
-        
+
         double[] sv = new double[] {10, 20, 30, 40, 50};
         var v1 = VectorN.Col.ofSi(new DenseDoubleDataSi(sv, 5, 1), Speed.Unit.km_h);
         System.out.println("speed vector 1: " + v1);
-        
-        double[] doubleValues2 = new double[] { 10, 20.0, 60, 120.0, 300.0 };
+
+        double[] doubleValues2 = new double[] {10, 20.0, 60, 120.0, 300.0};
         DenseDoubleDataSi ddd2 = new DenseDoubleDataSi(doubleValues2, 5, 1);
         VectorN.Col<Duration> dv1 = VectorN.Col.ofSi(ddd2, Duration.Unit.s);
         Speed speed = Speed.of(10.0, "km/h");
