@@ -53,10 +53,34 @@ public class FormatSIPrefix
     /** */
     private static void siPrefixEnergy()
     {
-        Energy energy = Energy.ONE.scaleBy(-1);
+        Energy energy = Energy.ONE;
         for (int i = -36; i < 36; i++)
         {
-            System.out.println(energy.scaleBy(Math.pow(10.0, i)).scaleBy(0.95)
+            System.out.println(energy.scaleBy(Math.pow(10.0, i))
+                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
+        }
+    }
+
+    /** */
+    private static void siPrefixLOD()
+    {
+        LinearObjectDensity lod = LinearObjectDensity.ONE;
+        for (int i = -36; i < 36; i++)
+        {
+            var scaled = lod.scaleBy(Math.pow(10.0, i));
+            System.out.println(scaled.format(QuantityFormat.defaults().setScientific()) + "  " + scaled
+                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
+        }
+    }
+
+    /** */
+    private static void siPrefixPerMassAll()
+    {
+        PerMass pm = PerMass.ONE;
+        for (int i = -40; i < 40; i++)
+        {
+            var scaled = pm.scaleBy(Math.pow(10.0, i));
+            System.out.println(scaled.format(QuantityFormat.defaults().setScientific()) + "  " + scaled
                     .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
         }
     }
@@ -89,7 +113,7 @@ public class FormatSIPrefix
         Energy energy = Energy.of(6.0, "MeV");
         System.out.println(energy.format(QuantityFormat.defaults().setAutoSiPrefix()));
     }
-    
+
     /**
      * @param args not used
      */
@@ -97,6 +121,10 @@ public class FormatSIPrefix
     {
         System.out.println("\nENERGY, min/max = default");
         siPrefixEnergy();
+        System.out.println("\nLOD, min/max = default");
+        siPrefixLOD();
+        System.out.println("\nPER MASS, min/max = default");
+        siPrefixPerMassAll();
         System.out.println("\nLENGTH, min/max = -3/3");
         siPrefixLength();
         System.out.println("\nMASS, min/max = -3/3");
