@@ -35,7 +35,7 @@ public class FormatDemo
         System.out.println(l.format(QuantityFormat.defaults().setWidth(10).setGroupingSeparator(false)));
         System.out.println(l.format(QuantityFormat.defaults().setLocale(Locale.FRANCE).setDisplayUnit(Energy.Unit.kWh)));
         System.out.println(l.format(QuantityFormat.defaults().setSiUnits().setDotSeparator(".").setPowerPrefix("^")));
-        System.out.println(l.format(QuantityFormat.defaults().setScaleSiPrefixes()));
+        System.out.println(l.format(QuantityFormat.defaults().setAutoSiPrefix()));
 
         System.out.println();
 
@@ -45,31 +45,31 @@ public class FormatDemo
                 l.format(QuantityFormat.defaults().setWidth(12).setLocale(Locale.FRANCE).setDisplayUnit(Energy.Unit.kWh)));
         System.out.println(
                 l.format(QuantityFormat.defaults().setWidth(12).setSiUnits().setDotSeparator(".").setPowerPrefix("^")));
-        System.out.println(l.format(QuantityFormat.defaults().setWidth(12).setScaleSiPrefixes()));
+        System.out.println(l.format(QuantityFormat.defaults().setWidth(12).setAutoSiPrefix()));
 
         System.out.println();
 
         var p = new Pressure(145.008723, Pressure.Unit.hPa);
         System.out.println(p);
-        System.out.println(p.format(QuantityFormat.defaults().setScaleSiPrefixes()));
+        System.out.println(p.format(QuantityFormat.defaults().setAutoSiPrefix()));
 
         System.out.println();
 
         var m = new Mass(0.000864, Mass.Unit.kg);
         System.out.println(m);
-        System.out.println(m.format(QuantityFormat.defaults().setScaleSiPrefixes()));
+        System.out.println(m.format(QuantityFormat.defaults().setAutoSiPrefix()));
 
         System.out.println();
 
         var m2 = new Mass(0.864, Mass.Unit.g);
         System.out.println(m2);
-        System.out.println(m2.format(QuantityFormat.defaults().setScaleSiPrefixes()));
+        System.out.println(m2.format(QuantityFormat.defaults().setAutoSiPrefix()));
 
         System.out.println();
 
         var od = new LinearObjectDensity(0.5, "/mm");
         System.out.println(od);
-        System.out.println(od.format(QuantityFormat.defaults().setScaleSiPrefixes()));
+        System.out.println(od.format(QuantityFormat.defaults().setAutoSiPrefix()));
 
         System.out.println();
 

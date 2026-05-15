@@ -62,29 +62,7 @@ public class FormatExample
     private static void qf()
     {
         Energy energy = new Energy(13.34, "GeV");
-        System.out.println(energy.as(Energy.Unit.J).format(QuantityFormat.defaults().setScaleSiPrefixes()));
-    }
-
-    /** */
-    private static void siprefix()
-    {
-        Mass weight = Mass.ONE;
-        for (int i = -18; i < 9; i++)
-        {
-            System.out.println(weight.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(1).setScaleSiPrefixes(-12, 0)));
-        }
-    }
-
-    /** */
-    private static void siprefixlen()
-    {
-        Length length = Length.ONE;
-        for (int i = -9; i < 9; i++)
-        {
-            System.out.println(length.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(1).setScaleSiPrefixes(-3, 3)));
-        }
+        System.out.println(energy.as(Energy.Unit.J).format(QuantityFormat.defaults().setAutoSiPrefix()));
     }
 
     /** col format. */
@@ -117,16 +95,7 @@ public class FormatExample
         System.out.println();
         qf();
         System.out.println();
-        siprefixlen();
-        System.out.println();
         store();
-
-        System.out.println();
-        System.out.printf("%.6g%n", 123456d); // exp = 5, p = 6 → fixed
-        System.out.printf("%.6g%n", 1234567d); // exp = 6, p = 6 → scientific
-        System.out.printf("%.6g%n", 0.000123456789); // exp = -4 → still fixed
-        System.out.printf("%.6g%n", 0.0000123456789);// exp = -5 → scientific
-
     }
 
 }
