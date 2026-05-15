@@ -24,7 +24,7 @@ public class FormatSIPrefix
         for (int i = -15; i < 9; i++)
         {
             System.out.println(weight.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-9, 0)));
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-9, 0)));
         }
     }
 
@@ -35,7 +35,7 @@ public class FormatSIPrefix
         for (int i = -9; i < 9; i++)
         {
             System.out.println(weight.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-3, 3)));
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-3, 3)));
         }
     }
 
@@ -46,7 +46,7 @@ public class FormatSIPrefix
         for (int i = -9; i < 9; i++)
         {
             System.out.println(length.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-3, 3)));
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-3, 3)));
         }
     }
 
@@ -57,7 +57,7 @@ public class FormatSIPrefix
         for (int i = -36; i < 36; i++)
         {
             System.out.println(energy.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
         }
     }
 
@@ -68,8 +68,8 @@ public class FormatSIPrefix
         for (int i = -36; i < 36; i++)
         {
             var scaled = lod.scaleBy(Math.pow(10.0, i));
-            System.out.println(scaled.format(QuantityFormat.defaults().setScientific()) + "  " + scaled
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
+            System.out.println(scaled.format(QuantityFormat.instance().setScientific()) + "  " + scaled
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
         }
     }
 
@@ -80,8 +80,8 @@ public class FormatSIPrefix
         for (int i = -40; i < 40; i++)
         {
             var scaled = pm.scaleBy(Math.pow(10.0, i));
-            System.out.println(scaled.format(QuantityFormat.defaults().setScientific()) + "  " + scaled
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
+            System.out.println(scaled.format(QuantityFormat.instance().setScientific()) + "  " + scaled
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(3).setAutoSiPrefix()));
         }
     }
 
@@ -92,7 +92,7 @@ public class FormatSIPrefix
         for (int i = -9; i < 12; i++)
         {
             System.out.println(lod.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-6, 3)));
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-6, 3)));
         }
     }
 
@@ -103,7 +103,7 @@ public class FormatSIPrefix
         for (int i = -9; i < 12; i++)
         {
             System.out.println(pm.scaleBy(Math.pow(10.0, i))
-                    .format(QuantityFormat.defaults().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-6, 3)));
+                    .format(QuantityFormat.instance().setFixedWithSciFallback().setDecimals(1).setAutoSiPrefix(-6, 3)));
         }
     }
 
@@ -111,7 +111,7 @@ public class FormatSIPrefix
     private static void siPrefixTranslate()
     {
         Energy energy = Energy.of(6.0, "MeV");
-        System.out.println(energy.format(QuantityFormat.defaults().setAutoSiPrefix()));
+        System.out.println(energy.format(QuantityFormat.instance().setAutoSiPrefix()));
     }
 
     /**

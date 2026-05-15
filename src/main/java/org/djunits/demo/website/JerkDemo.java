@@ -33,9 +33,9 @@ public final class JerkDemo
         Jerk jerk3 = new Jerk(4.0, Jerk.Unit.in_s3);
         System.out.println("jerk3 = Jerk(4.0, Jerk.Unit.in_s3  : " + jerk3);
         System.out.println("jerk3 expressed in Jerk.Unit.SI    : "
-                + jerk3.format(QuantityFormat.defaults().setDisplayUnit(Jerk.Unit.SI).setFormatString("%.5g")));
+                + jerk3.format(QuantityFormat.instance().setDisplayUnit(Jerk.Unit.SI).setFormatString("%.5g")));
         System.out.println("jerk3 expressed in Jerk.Unit.ft_s3 : "
-                + jerk3.format(QuantityFormat.defaults().setDisplayUnit(Jerk.Unit.ft_s3).setFormatString("%.5g")));
+                + jerk3.format(QuantityFormat.instance().setDisplayUnit(Jerk.Unit.ft_s3).setFormatString("%.5g")));
 
         double[][] jmd = new double[][] {{1, 2}, {3, 4}};
         Matrix2x2<Jerk> jerkMatrix2 = Matrix2x2.of(jmd, Jerk.Unit.in_s3);

@@ -80,7 +80,7 @@ public final class ShowUnitsLocalication
         System.out.println(length);
 
         Length l2 = new Length(5.0, Length.Unit.km);
-        System.out.println(l2.format(QuantityFormat.defaults().setDisplay()));
+        System.out.println(l2.format(QuantityFormat.instance().setDisplay()));
         System.out.println("SI = " + l2.si() + " [" + l2.getDisplayUnit().getBaseUnit().getId() + "]");
 
         Length l3 = new Length(10.0, "Qm");

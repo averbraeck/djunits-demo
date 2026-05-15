@@ -25,7 +25,7 @@ public class AbsVecMat
                 AbsMatrix2x2.of(new double[] {10, 20, 30, 40}, Angle.Unit.deg, Direction.Reference.EAST);
         System.out.println(dirMatrix);
         System.out.println();
-        System.out.println(dirMatrix.format(MatrixFormat.defaults().setPrintReference().setReferencePrefix(" (relative to ")));
+        System.out.println(dirMatrix.format(MatrixFormat.instance().setPrintReference().setReferencePrefix(" (relative to ")));
     }
 
 }

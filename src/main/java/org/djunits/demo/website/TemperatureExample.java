@@ -33,9 +33,9 @@ public class TemperatureExample
 
         // show that absolute values can be shown relative to different reference points
         System.out.println("\nTemperature t  = " + t + ", si = " + t.si());
-        System.out.println("t in Kelvin    = " + t.format(QuantityFormat.defaults().setDisplayUnit(Temperature.Unit.K)
+        System.out.println("t in Kelvin    = " + t.format(QuantityFormat.instance().setDisplayUnit(Temperature.Unit.K)
                 .setPrintReference().setReferencePrefix(" (relative to 0 ")));
-        System.out.println("t in Celsius   = " + t.format(QuantityFormat.defaults().setDisplayUnit(Temperature.Unit.degC)
+        System.out.println("t in Celsius   = " + t.format(QuantityFormat.instance().setDisplayUnit(Temperature.Unit.degC)
                 .setPrintReference().setReferencePrefix(" (relative to 0 ")));
     }
 

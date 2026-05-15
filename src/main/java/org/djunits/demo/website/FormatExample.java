@@ -25,7 +25,7 @@ public class FormatExample
     private static void len()
     {
         Length l = Length.of(12.43, "mi");
-        String s = l.format(QuantityFormat.defaults().setDisplayUnit("m").setGroupingSeparator(true));
+        String s = l.format(QuantityFormat.instance().setDisplayUnit("m").setGroupingSeparator(true));
         System.out.println(s);
     }
 
@@ -34,9 +34,9 @@ public class FormatExample
     {
         Locale.setDefault(Locale.GERMANY);
         Length l = Length.of(12.43, "mi");
-        String sDE = l.format(QuantityFormat.defaults().setDisplayUnit("m").setGroupingSeparator(true));
+        String sDE = l.format(QuantityFormat.instance().setDisplayUnit("m").setGroupingSeparator(true));
         System.out.println(sDE);
-        String sUS = l.format(QuantityFormat.defaults().setLocale(Locale.US).setDisplayUnit("m").setGroupingSeparator(true));
+        String sUS = l.format(QuantityFormat.instance().setLocale(Locale.US).setDisplayUnit("m").setGroupingSeparator(true));
         System.out.println(sUS);
         Locale.setDefault(Locale.US);
     }
@@ -45,7 +45,7 @@ public class FormatExample
     private static void si()
     {
         var q = Energy.of(1.23, "kJ");
-        var s = q.format(QuantityFormat.defaults().setSiUnits().setDotSeparator("&sdot;").setPowerPrefix("<sup>")
+        var s = q.format(QuantityFormat.instance().setSiUnits().setDotSeparator("&sdot;").setPowerPrefix("<sup>")
                 .setPowerPostfix("</sup>").setDivider(false));
         System.out.println(s);
     }
@@ -55,21 +55,21 @@ public class FormatExample
     {
         Temperature t = new Temperature(0.0, Temperature.Unit.degF);
         System.out.println(t.relativeTo(Temperature.Reference.CELSIUS).format(
-                QuantityFormat.defaults().setDisplayUnit("K").setPrintReference().setReferencePrefix(" (relative to 0 ")));
+                QuantityFormat.instance().setDisplayUnit("K").setPrintReference().setReferencePrefix(" (relative to 0 ")));
     }
 
     /** */
     private static void qf()
     {
         Energy energy = new Energy(13.34, "GeV");
-        System.out.println(energy.as(Energy.Unit.J).format(QuantityFormat.defaults().setAutoSiPrefix()));
+        System.out.println(energy.as(Energy.Unit.J).format(QuantityFormat.instance().setAutoSiPrefix()));
     }
 
     /** col format. */
-    public static final VectorFormat.Row COLFORMAT = VectorFormat.Row.defaults().setVectorPrefix("Col");
+    public static final VectorFormat.Row COLFORMAT = VectorFormat.Row.instance().setVectorPrefix("Col");
 
     /** row format. */
-    public static final VectorFormat.Row ROWFORMAT = VectorFormat.Row.defaults().setVectorPrefix("Row");
+    public static final VectorFormat.Row ROWFORMAT = VectorFormat.Row.instance().setVectorPrefix("Row");
 
     /** */
     private static void store()

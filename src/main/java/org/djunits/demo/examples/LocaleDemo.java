@@ -36,19 +36,19 @@ public final class LocaleDemo
         System.out.println("\nPrinting US");
         Locale.setDefault(Locale.US);
         Duration hour = new Duration(3.0, Duration.Unit.h);
-        System.out.println(hour.format(QuantityFormat.defaults().setTextual()));
+        System.out.println(hour.format(QuantityFormat.instance().setTextual()));
         System.out.println(hour);
 
         System.out.println("\nPrinting NL");
         Locale.setDefault(Locale.forLanguageTag("NL"));
-        System.out.println(hour.format(QuantityFormat.defaults().setTextual()));
+        System.out.println(hour.format(QuantityFormat.instance().setTextual()));
         System.out.println(hour);
 
         System.out.println("\nParsing UK");
         Locale.setDefault(new Locale("en", "UK"));
         Speed speed = Speed.valueOf("14.2 km/h");
-        System.out.println(speed.format(QuantityFormat.defaults().setTextual()));
-        System.out.println(speed.format(QuantityFormat.defaults().setDisplay()));
+        System.out.println(speed.format(QuantityFormat.instance().setTextual()));
+        System.out.println(speed.format(QuantityFormat.instance().setDisplay()));
         System.out.println(speed);
 
         try
@@ -64,8 +64,8 @@ public final class LocaleDemo
         System.out.println("\nParsing NL");
         Locale.setDefault(new Locale("nl", "NL"));
         speed = Speed.valueOf("14,2 km/u");
-        System.out.println(speed.format(QuantityFormat.defaults().setTextual()));
-        System.out.println(speed.format(QuantityFormat.defaults().setDisplay()));
+        System.out.println(speed.format(QuantityFormat.instance().setTextual()));
+        System.out.println(speed.format(QuantityFormat.instance().setDisplay()));
         System.out.println(speed);
 
         try
@@ -92,7 +92,7 @@ public final class LocaleDemo
         {
             speed = Speed.valueOf("18,99 km/h");
             System.out.println("Correctly parsed 18.99 km/h using fallback locale as "
-                    + speed.format(QuantityFormat.defaults().setDisplay()));
+                    + speed.format(QuantityFormat.instance().setDisplay()));
         }
         catch (Exception e)
         {
@@ -101,19 +101,19 @@ public final class LocaleDemo
 
         System.out.println("\nPrinting NL");
         Locale.setDefault(Locale.forLanguageTag("NL"));
-        System.out.println(new Speed(1234455466787.0, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
-        System.out.println(new Speed(1230000000000.0, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
-        System.out.println(new Speed(0.112, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
-        System.out.println(new Speed(0.000112, Speed.Unit.kt).format(QuantityFormat.defaults().setTextual()));
-        System.out.println(new Speed(1E40, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
+        System.out.println(new Speed(1234455466787.0, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
+        System.out.println(new Speed(1230000000000.0, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
+        System.out.println(new Speed(0.112, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
+        System.out.println(new Speed(0.000112, Speed.Unit.kt).format(QuantityFormat.instance().setTextual()));
+        System.out.println(new Speed(1E40, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
 
         System.out.println("\nPrinting US");
         Locale.setDefault(Locale.US);
-        System.out.println(new Speed(1234455466787.0, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
-        System.out.println(new Speed(1230000000000.0, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
-        System.out.println(new Speed(0.112, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
-        System.out.println(new Speed(0.000112, Speed.Unit.kt).format(QuantityFormat.defaults().setTextual()));
-        System.out.println(new Speed(1E40, Speed.Unit.mi_h).format(QuantityFormat.defaults().setDisplay()));
+        System.out.println(new Speed(1234455466787.0, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
+        System.out.println(new Speed(1230000000000.0, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
+        System.out.println(new Speed(0.112, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
+        System.out.println(new Speed(0.000112, Speed.Unit.kt).format(QuantityFormat.instance().setTextual()));
+        System.out.println(new Speed(1E40, Speed.Unit.mi_h).format(QuantityFormat.instance().setDisplay()));
 
         System.out.println("\nPrinting SI value NL");
         Locale.setDefault(Locale.forLanguageTag("NL"));
